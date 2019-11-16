@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <!-- 登录后才可以发布内容 -->
+        {% if request.session.is_login %}
+            <center>
+            <form action="send_content" method="post">
+                {% csrf_token %}
+                <textarea class="form-control" rows="3" placeholder="在这里你就是现代版诗人，说的话像诗一样美丽..." style="min-width: 100%;height:100px;background-color:#f4f5f5" name="content" ></textarea>
+                <div style="text-align:right;">
+                    <br/>
+                    <input class="btn btn-info" type="submit" value="发布">
+                </div>
+            </form>
+            </center>
+        {% else %}
+            <!-- 没有登录禁止发布内容 -->
+            <center>
+            <form action="send_content" method="post">
+                {% csrf_token %}
+                <textarea class="form-control" rows="3" placeholder="在这里你就是现代版诗人，说的话像诗一样美丽..." style="min-width: 100%;height:100px;background-color:#f4f5f5" name="content"></textarea>
+                <div style="text-align:right;">
+                    <br/>
+                    <input class="btn btn-info" type="submit" disabled="发布" value="发布">
+                </div>
+            </form>
+            </center>
+        {% endif %}
+    </div>
+</div>
+

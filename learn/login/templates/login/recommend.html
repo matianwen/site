@@ -1,0 +1,15 @@
+
+<div class="hidden-xs col-sm-4 col-md-3">
+    <div class="panel panel-default">
+        <div class="panel-heading"><b>热点推荐</b></div>
+        <div class="panel-body">
+            <ul style="list-style-type: none;">
+                {% for recom in recommendcontent %}
+                    <div class="recom">
+                        <p ><li><a href="{% url 'index' %}"style="color:black">{{ recom.content }}</a></li></p>
+                    </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

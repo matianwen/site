@@ -1,0 +1,34 @@
+<div style="background-color:#f4f5f5">
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}言寺{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-7">
+                {% include "user/sendcontent.html" %}
+                <!-- 前端显示所有发布诗句信息 -->
+                {% include "login/showcontent.html" %}
+            </div>
+
+            <!-- 登录后会显示诗人相关信息 -->
+            {% if request.session.is_login %}
+                {% include "login/userinformation.html" %}
+
+                {% include "login/recommend.html" %}
+            {% else %}
+                <!-- 没有登录右边就只显示推荐热点 -->
+                {% include "login/recommend.html" %}
+            {% endif %}
+
+            {% include "login/footer.html" %}
+
+            <a class="btn btn-default" href="#" role="button" style="position:fixed;right:0;bottom:0" id="top">
+                回到顶部
+            </a>
+
+        </div>
+    </div>
+{% endblock %}
+</div>

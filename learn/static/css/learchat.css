@@ -1,0 +1,46 @@
+div.chat {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+}
+div.chat h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2e3135;
+}
+div.chat h5 {
+    margin-top: 0.5em;
+    line-height: 2;
+}
+.panel-default>.panel-heading {
+    background-color: #fff;
+}
+div.body {
+    line-height: 0.5;
+}
+div.panel-body li {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2e3135;
+}
+div.bottom.style4 {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background: #000000;
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+div.bottom span.style4 {
+    position: relative;
+    display: block;
+    color: #909090;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+div.chat button btn btn-default {
+    line-height: 0.5;
+}

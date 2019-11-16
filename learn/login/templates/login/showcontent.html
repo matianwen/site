@@ -1,0 +1,36 @@
+<!-- 显示所有用户发表信息 用户、发布内容、发布时间 -->
+{% load staticfiles %}
+{% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
+
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        {% for chat in learnchats %} <!-- 用户、发布内容、发布时间 -->
+            <div class="chat">
+                <h4><a href="/user_home/">{{ chat.Temp }}</a></h4>
+                <h6>{{ chat.createTime | date:'Y年m月d日 H:i:s' }}</h6>
+                <h5>{{ chat.content | linebreaksbr}}</h5>
+                <br/>
+
+                <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>点赞
+                    </button>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>评论
+                    </button>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default">
+                        <span class="glyphicon glyphicon-share" aria-hidden="true"></span>转发
+                    </button>
+                  </div>
+                </div>
+                <!--导入newcomment.html文件-->
+            </div>
+        {% endfor %}
+    </div>
+</div>

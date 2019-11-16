@@ -1,0 +1,16 @@
+{% load staticfiles %}
+{% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
+
+<div class="hidden-xs col-sm-4 col-md-3">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ul style="list-style-type: none;">
+                <h4><li><a href="/user_info/">{{ request.session.user_name }}</a></li></h4>
+                <HR>
+                <h4><li>诗句：<a href="/user_home/">{{ learnchats|length }}</a></li></h4>
+                <h4><li>诗友：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
+                <h4><li>获赞：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
+            </ul>
+        </div>
+    </div>
+</div>

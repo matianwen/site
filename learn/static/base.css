@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    podding: 0;
+ }
+body {
+    margin-top: 70px!important;
+}
+ul {
+    list-style-type: none!important;
+}
+nav navbar-nav a {
+    font-weight: bold;
+}

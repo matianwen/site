@@ -1,0 +1,84 @@
+{% load staticfiles %}
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>{% block title %}base{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7/css/bootstrap.min.css' %}">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- 品牌和toggle得到更好的移动显示分组 -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'index' %}"><font color="#027fff"><b>言寺</b></font>
+              <!--<img src="bird.jpg" alt="Logo" style="width:40px;">-->
+            </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <!-- 收集用于切换的导航链接、表单和其他内容 -->
+          <div id="navbar-collapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li role="presentation" class="active"><a href="{% url 'index' %}">主页</a></li>
+              <li role="presentation"><a href="/fund/">发现</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <div class="navbar-form navbar-left">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button" >探索</button>
+                  </span>
+                </div>
+              </div>
+
+              {% if request.session.is_login %}
+                <li><a href="/user_info/">诗人:</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.session.user_name }}<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/user_home/">个人主页</a></li>
+                    <li><a href="/user_info/">资料设置</a></li>
+                    <li><a href="/logout/">登出</a></li>
+                  </ul>
+                </li>
+              {% else %}
+                <li><a href="/login/">登录</a></li>
+                <li><a href="/register/">注册</a></li>
+              {% endif %}
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </nav>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    {% block content %}{% endblock %}
+
+  </body>
+</html>
