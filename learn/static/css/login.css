@@ -1,3 +1,12 @@
+/* 把导航栏居中对齐下面显示内容*/
+/*
+div.navbar-header {
+    margin-left: 65px;
+}
+.navbar-default .navbar-form {
+    margin-left: 365px;
+}
+*/
 body {
   background-color: #eee;
 }

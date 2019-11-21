@@ -83,7 +83,6 @@ def upload(request):
 
 
 # 修改用户头像视图
-# class UploadImageView(LoginRequiredMixin, View):
 def upload_photo(request):
     print('我在修改头像里...')
     image_form = UploadImageForm(request.POST, request.FILES, instance=request.session.user)
@@ -92,9 +91,9 @@ def upload_photo(request):
         return JsonResponse({'status': 'ok'})
     else:
         return JsonResponse({'status': 'faile'})
-        #image = image_form.cleaned_data["image"]
-        #request.user.image = image
-        #request.user.save()
-        #return HttpResponse("{'status':'success'}", content_type='application/json')
+        # image = image_form.cleaned_data["image"]
+        # request.user.image = image
+        # request.user.save()
+        # return HttpResponse("{'status':'success'}", content_type='application/json')
 
 

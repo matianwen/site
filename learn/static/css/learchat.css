@@ -1,16 +1,38 @@
+/*把导航栏居中对齐下面显示的内容*/
+/*
+div.navbar-header {
+    margin-left: 65px;
+}
+.navbar-default .navbar-form {
+    margin-left: 365px;
+}
+把导航栏居中对齐下面显示的内容*/
 div.chat {
     margin-bottom: 2em;
     padding-bottom: 1em;
     border-bottom: 1px solid #eee;
+    position: relative;
 }
 div.chat h4 {
-    font-size: 1.25rem;
+    font-size: 1.7rem;
     font-weight: 600;
+    margin-left:85px;
+}
+div.chat h4 a {
+    color: #2e3135;
+}
+div.panel-body h4 li a {
     color: #2e3135;
 }
 div.chat h5 {
     margin-top: 0.5em;
     line-height: 2;
+    font-size: 15px;
+    color: #17181a;
+    margin-left:85px;
+}
+div.chat h6 {
+    margin-left:85px;
 }
 .panel-default>.panel-heading {
     background-color: #fff;
@@ -43,4 +65,12 @@ div.bottom span.style4 {
 }
 div.chat button btn btn-default {
     line-height: 0.5;
+}
+div.chat hr {
+    margin-bottom: 5px;
+}
+div.btn-group-justified {
+    margin:0px auto;
+    margin-top:12px;
+    margin-left:85px;
 }
