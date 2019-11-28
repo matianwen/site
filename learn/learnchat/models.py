@@ -46,9 +46,20 @@ class Information(models.Model):
     chats_num = models.CharField('Send.content', max_length=100, unique=True)
     read_chat = models.PositiveIntegerField(default=0)
 
+
     def __str__(self):
         return self.chats_num
 
     class Meta:
         verbose_name = '用户信息'
         verbose_name_plural = '用户信息'
+
+
+# 用户名头像模型
+class Updateheadpoto(models.Model):
+    username = models.CharField(max_length=16)
+    avatar = models.FileField(upload_to="headimages/%Y/%m/%d/", default=u"headimages/default.png", max_length=100, verbose_name="头像")
+
+    def __str__(self):
+        return self.avatar
+

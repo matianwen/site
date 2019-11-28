@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, render_to_response
+from django.shortcuts import render, redirect, get_object_or_404, render_to_response, reverse
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from . models import Send
 from datetime import datetime
@@ -6,9 +6,11 @@ from login.models import User
 from login.views import login
 from login.views import register
 import os
-from .forms import UploadImageForm
+# from .forms import UploadImageForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from comments.models import Comments
+from .models import Updateheadpoto
+import time
 
 
 # 发布内容视图
@@ -60,40 +62,54 @@ def fund(request):
     return render(request, 'user/fund.html', context)
 
 
-# 上传图片视图
-def upload(request):
-    if request.session.get('is_login', None):
-        if request.method == 'GET':
-            return redirect('index')
-        elif request.method == 'POST':
-            content_photo = request.FILES.get("upload", None)
-            if not content_photo:
-                return HttpResponse("没有上传内容!")
-            position_name = os.path.join('E:\\site\\learn\\static\\photo')
+# 消息通知视图
+def noticeinfo(request):
+    context = {}
+    return render(request, 'user/noticeinfo.html', context)
 
-            storage_location = open(position_name, 'wb+')
-            for chunk in content_photo.chunks():
-                storage_location.write(chunk)
-            storage_location.close()
-            return HttpResponse("上传成功!")
-        else:
-            return HttpResponseRedirect("不支持的请求方法!")
-    else:
-        return render(request, 'login/login.html')
+
+# 黑洞视图
+def blackhole(request):
+    context = {}
+    return render(request, 'user/blackhole.html', context)
 
 
 # 修改用户头像视图
+'''
 def upload_photo(request):
     print('我在修改头像里...')
-    image_form = UploadImageForm(request.POST, request.FILES, instance=request.session.user)
-    if image_form.is_valid():
-        image_form.save(commit=True)
-        return JsonResponse({'status': 'ok'})
-    else:
-        return JsonResponse({'status': 'faile'})
-        # image = image_form.cleaned_data["image"]
-        # request.user.image = image
-        # request.user.save()
-        # return HttpResponse("{'status':'success'}", content_type='application/json')
+    if request.method == "POST":
+        avatar = request.FILES.get('avatar')
 
+        with open(avatar.name, 'wb') as f:
+            for line in avatar:
+                f.write(line)
+        return HttpResponse('ok')
+    return render(request, 'userinfo.html')
+'''
+
+
+# 上传头像视图
+def updateheadphoto(request):
+    context = {}
+    print('我在修改头像里...')
+    if request.method == "POST":
+        name = request.session.get('user_name')
+        avatar = request.FILES.get('avatar')
+        headpoto = Updateheadpoto.objects.create(username=name, avatar=avatar)
+        headpoto.save()
+        print('头像上传成功...')
+        context['headpoto'] = headpoto
+
+    return render(request, 'user/updateheadphoto.html', context)
+
+# 显示头像视图
+def showheadpoto(request):
+    contexts = {}
+    headpoto = Updateheadpoto.objects.all()
+    id = headpoto.id
+    username = headpoto.username
+    avatar = headpoto.avatar
+    contexts['newpoto'].append(id,username,avatar)
+    return render(request, 'login/index.html', contexts)
 

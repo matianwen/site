@@ -8,6 +8,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>{% block title %}base{% endblock %}</title>
 
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{% static 'bootstrap-3.3.7/css/bootstrap.min.css' %}">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -20,6 +21,8 @@
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <link href="{% static 'css/noticeinfo.css' %}" rel="stylesheet"/>
+    <!-- <link rel="SHORTCUT ICON" href="{% static 'images/favicon.ico' %}"/> -->
 
     {% block css %}{% endblock %}
   </head>
@@ -44,7 +47,8 @@
           <div id="navbar-collapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li role="presentation" class="active"><a href="{% url 'index' %}"><b>主页</b></a></li>
-              <li role="presentation"><a href="/fund/">发现</a></li>
+              <li role="presentation"><a href="/fund/"><b>发现</b></a></li>
+              <li role="presentation"><a href="/blackhole/"><b>黑洞</b></a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -58,9 +62,11 @@
               </div>
 
               {% if request.session.is_login %}
-                <li><a href="/user_info/">诗人:</a></li>
+                <li><a href="/noticeinfo/"><img src="/static/images/messageIcon.png"></a></li>
+                <li><a href="/user_home/"><b>诗人:</b></a></li>
+                <li><img width="35" height="35" class="js-img-show" id="avatarShow" src={{headpoto.avatar.url}}></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ request.session.user_name }}<span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>{{ request.session.user_name }}</b><span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="/user_home/">个人主页</a></li>
                     <li><a href="/user_info/">资料设置</a></li>
@@ -68,8 +74,8 @@
                   </ul>
                 </li>
               {% else %}
-                <li><a href="/login/">登录</a></li>
-                <li><a href="/register/">注册</a></li>
+                <li><a href="/login/"><b>登录</b></a></li>
+                <li><a href="/register/"><b>注册</b></a></li>
               {% endif %}
 
             </ul>

@@ -1,0 +1,13 @@
+/*通知消息喇叭*/
+.nav>li>a>img {
+    width: 20px;
+    display: inline-block!important;
+    margin-top: 0;
+    vertical-align: top;
+    border: 0;
+    text-align: center;
+    background-imge: url($img);
+    background-size: cover;
+    mix-blend-mode: difference;
+    color: #71777c;
+}

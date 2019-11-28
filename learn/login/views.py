@@ -10,6 +10,7 @@ from learnchat.models import Send
 from learnchat.models import Information
 from django.db.models.aggregates import Count
 from comments.models import Comments
+from learnchat.models import Updateheadpoto
 
 
 # 主页视图
@@ -18,6 +19,8 @@ def index(request):
     contexts['learnchats'] = Send.objects.all().order_by("-createTime")  # 显示所有发布内容视图
     contexts['recommendcontent'] = Send.objects.filter(recommend=1)  # 热点推荐视图
     contexts['comments'] = Comments.objects.all()
+    # name = request.session.get('user_name')
+    contexts['headpoto'] = Updateheadpoto
     return render(request, 'login/index.html', contexts)
 
 

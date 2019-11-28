@@ -3,15 +3,17 @@
 {% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
 
 
-<div class="panel panel-default">
-    <div class="panel-body">
-        {% for chat in learnchats %} <!-- 用户、发布内容、发布时间 -->
-            <div class="chat">
-                <h4><a href="/user_home/">{{ chat.Temp }}</a></h4>
-                <h6>{{ chat.createTime | date:'Y年m月d日 H:i:s' }}</h6>
+
+{% for chat in learnchats %} <!-- 用户、发布内容、发布时间 -->
+    <div class="chat">
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <h4><img width="48" height="48" class="js-img-show" id="avatarShow" src="{{headpoto.avatar.url}}"/>&nbsp;&nbsp;<a href="/user_home/">{{ chat.Temp }}</a></h4>
+
+                <h6>{{ chat.createTime | date:'Y-m-d H:i:s' }} 来自</h6>
                 <h5>{{ chat.content | linebreaksbr}}</h5>
                 <br/>
-
                 <hr/>
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                   <div class="btn-group" role="group">
@@ -26,6 +28,7 @@
                 </div>
                 <!--导入newcomment.html文件-->
             </div>
-        {% endfor %}
+        </div>
     </div>
-</div>
+{% endfor %}
+

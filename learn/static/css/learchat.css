@@ -7,22 +7,27 @@ div.navbar-header {
     margin-left: 365px;
 }
 把导航栏居中对齐下面显示的内容*/
+
+/*显示内容css
 div.chat {
     margin-bottom: 2em;
     padding-bottom: 1em;
     border-bottom: 1px solid #eee;
     position: relative;
 }
+*/
 div.chat h4 {
     font-size: 1.7rem;
     font-weight: 600;
-    margin-left:85px;
+    margin-left:27px;
 }
 div.chat h4 a {
     color: #2e3135;
 }
 div.panel-body h4 li a {
-    color: #2e3135;
+    color: #17181a;
+    font-size: 15px;
+    font-weight: 600;
 }
 div.chat h5 {
     margin-top: 0.5em;
@@ -74,3 +79,4 @@ div.btn-group-justified {
     margin-top:12px;
     margin-left:85px;
 }
+
