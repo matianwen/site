@@ -59,6 +59,8 @@ class Information(models.Model):
 class Updateheadpoto(models.Model):
     username = models.CharField(max_length=16)
     avatar = models.FileField(upload_to="headimages/%Y/%m/%d/", default=u"headimages/default.png", max_length=100, verbose_name="头像")
+    # avatar = models.ImageField(upload_to="headimages/%Y/%m/%d/", default=u"headimages/default.png", max_length=100, verbose_name="头像")
+    # ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
 
     def __str__(self):
         return self.avatar

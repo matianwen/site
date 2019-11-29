@@ -98,10 +98,13 @@ def updateheadphoto(request):
         avatar = request.FILES.get('avatar')
         headpoto = Updateheadpoto.objects.create(username=name, avatar=avatar)
         headpoto.save()
-        print('头像上传成功...')
         context['headpoto'] = headpoto
-
+        # context['imghref'] = Updateheadpoto.objects.filter(id=1)[0]
+        # return render(request, 'login/showcontent.html', context)
+        # return render(request, 'login/showcontent.html', context)
+        print('头像上传成功...')
     return render(request, 'user/updateheadphoto.html', context)
+
 
 # 显示头像视图
 def showheadpoto(request):
