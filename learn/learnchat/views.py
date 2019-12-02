@@ -6,7 +6,6 @@ from login.models import User
 from login.views import login
 from login.views import register
 import os
-# from .forms import UploadImageForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from comments.models import Comments
 from .models import Updateheadpoto
@@ -74,21 +73,6 @@ def blackhole(request):
     return render(request, 'user/blackhole.html', context)
 
 
-# 修改用户头像视图
-'''
-def upload_photo(request):
-    print('我在修改头像里...')
-    if request.method == "POST":
-        avatar = request.FILES.get('avatar')
-
-        with open(avatar.name, 'wb') as f:
-            for line in avatar:
-                f.write(line)
-        return HttpResponse('ok')
-    return render(request, 'userinfo.html')
-'''
-
-
 # 上传头像视图
 def updateheadphoto(request):
     context = {}
@@ -102,20 +86,7 @@ def updateheadphoto(request):
         headpoto = Updateheadpoto.objects.create(username=name, avatar=avatar)
         headpoto.save()
         context['headpotoo'] = headpoto
-        # context['imghref'] = Updateheadpoto.objects.filter(id=1)[0]
-        # return render(request, 'login/showcontent.html', context)
-        # return render(request, 'login/showcontent.html', context)
         print('头像上传成功...')
     return render(request, 'user/updateheadphoto.html', context)
 
-
-# 显示头像视图
-def showheadpoto(request):
-    contexts = {}
-    headpoto = Updateheadpoto.objects.all()
-    id = headpoto.id
-    username = headpoto.username
-    avatar = headpoto.avatar
-    contexts['newpoto'].append(id,username,avatar)
-    return render(request, 'login/index.html', contexts)
 

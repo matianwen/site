@@ -13,7 +13,15 @@
                 {% endfor %}
 
                 <HR>
-                <h4><li>诗句：<a href="/user_home/">{{ learnchats|length }}</a></li></h4>
+                <!--
+                {% for learn in learnchats %}
+                    {% if learn.Temp == request.session.user_name %}
+                {% endif %}
+                {% endfor %}
+                 -->
+                            <h4><li>诗句：<a href="/user_home/">{{ learnchats|length }}</a></li></h4>
+
+
                 <h4><li>诗友：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
                 <h4><li>获赞：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
             </ul>
