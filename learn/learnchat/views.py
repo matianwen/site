@@ -35,10 +35,10 @@ def send_content(request):
         print('用户名:', user_id)
 
         # 通过主键来获取login项目中的id
-        user_login = User.objects.get(name=user_id)
-        print('数据库用户名:', user_login)
+        # user_login = User.objects.get(name=user_id)
+        # print('数据库用户名:', user_login)
 
-        send_fb.Temp = user_login
+        send_fb.Temp = user_id
         send_fb.save()
         print("发布成功...")
     return redirect('index')
@@ -95,10 +95,13 @@ def updateheadphoto(request):
     print('我在修改头像里...')
     if request.method == "POST":
         name = request.session.get('user_name')
+        # 上传新头像之前把旧的头像删除
+        Updateheadpoto.objects.filter(username=name).delete()
+
         avatar = request.FILES.get('avatar')
         headpoto = Updateheadpoto.objects.create(username=name, avatar=avatar)
         headpoto.save()
-        context['headpoto'] = headpoto
+        context['headpotoo'] = headpoto
         # context['imghref'] = Updateheadpoto.objects.filter(id=1)[0]
         # return render(request, 'login/showcontent.html', context)
         # return render(request, 'login/showcontent.html', context)

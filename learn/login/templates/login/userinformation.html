@@ -5,7 +5,13 @@
     <div class="panel panel-default">
         <div class="panel-body">
             <ul style="list-style-type: none;">
-                <h4><li><a href="/user_home/"><img src="{{headpoto.avatar.url}}" width="60" height="60" class="js-img-show" id="avatarShow">&nbsp;&nbsp;<a href="/user_home/">{{ request.session.user_name }}</a></a></li></h4>
+
+                {% for head in headpoto %}
+                    {% if request.session.user_name == head.username %}
+                        <h4><li><a href="/user_home/"><img src="{{head.avatar.url}}" width="60" height="60" class="js-img-show" id="avatarShow">&nbsp;&nbsp;<a href="/user_home/">{{ request.session.user_name }}</a></a></li></h4>
+                    {% endif%}
+                {% endfor %}
+
                 <HR>
                 <h4><li>诗句：<a href="/user_home/">{{ learnchats|length }}</a></li></h4>
                 <h4><li>诗友：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>

@@ -23,7 +23,8 @@ class Tags(models.Model):
 class Send(models.Model):
     content = models.TextField('内容', null=True)   # 内容
     createTime = models.DateTimeField('发布日期', null=True)   # 时间
-    Temp = models.ForeignKey('login.User', verbose_name='作者', on_delete=models.CASCADE)   # 作者login.User
+    # Temp = models.ForeignKey('login.User', verbose_name='作者', on_delete=models.CASCADE)   # 作者login.User
+    Temp = models.CharField('作者', max_length=16)
     # tags = models.ManyToManyField(Tags, verbose_name='标签')
     see = models.IntegerField('浏览数', default=0)
     recommend = models.BooleanField('推荐言寺', default=False)
@@ -63,5 +64,5 @@ class Updateheadpoto(models.Model):
     # ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
 
     def __str__(self):
-        return self.avatar
+        return self.username
 

@@ -19,7 +19,6 @@ def index(request):
     contexts['learnchats'] = Send.objects.all().order_by("-createTime")  # 显示所有发布内容视图
     contexts['recommendcontent'] = Send.objects.filter(recommend=1)  # 热点推荐视图
     contexts['comments'] = Comments.objects.all()
-    name = request.session.get('user_name')
     contexts['headpoto'] = Updateheadpoto.objects.all()   #  filter(username=request.session.get('is_login'))
     return render(request, 'login/index.html', contexts)
 

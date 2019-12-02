@@ -64,7 +64,11 @@
               {% if request.session.is_login %}
                 <li><a href="/noticeinfo/"><img src="/static/images/messageIcon.png"></a></li>
                 <li><a href="/user_home/"><b>诗人:</b></a></li>
-                <li><img width="35" height="35" class="js-img-show" id="avatarShow" src={{headpoto.avatar.url}}></li>
+                {% for head in headpoto %}
+                  {% if request.session.user_name == head.username %}
+                    <li><img width="35" height="35" class="js-img-show" id="avatarShow" src={{head.avatar.url}}></li>
+                  {% endif %}
+                {% endfor %}
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>{{ request.session.user_name }}</b><span class="caret"></span></a>
                   <ul class="dropdown-menu">
