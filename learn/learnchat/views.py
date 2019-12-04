@@ -54,12 +54,12 @@ def user_home(request):
     context = {}
     return render(request, 'user/userhome.html', context)
 
-
+'''
 # 发现视图
 def fund(request):
     context = {}
     return render(request, 'user/fund.html', context)
-
+'''
 
 # 消息通知视图
 def noticeinfo(request):
@@ -88,5 +88,7 @@ def updateheadphoto(request):
         context['headpotoo'] = headpoto
         print('头像上传成功...')
     return render(request, 'user/updateheadphoto.html', context)
+
+
 
 

@@ -24,11 +24,13 @@ div.chat h4 {
 div.chat h4 a {
     margin-left: 0px;
     color: #2e3135;
+    text-decoration: none;
 }
 div.panel-body h4 li a {
     color: #17181a;
     font-size: 15px;
     font-weight: 600;
+    text-decoration: none;
 }
 div.chat h5 {
     margin-top: 0.5em;
@@ -81,3 +83,7 @@ div.btn-group-justified {
     margin-left:85px;
 }
 
+div.recom a {
+    color: black;
+    text-decoration: none;
+}

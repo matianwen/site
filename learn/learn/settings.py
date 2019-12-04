@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'captcha',
     'learnchat',
     'comments',
+    'findhistory',
 ]
 
 MIDDLEWARE = [

@@ -14,8 +14,7 @@ from learnchat.views import send_content
 import comments
 from learnchat.views import user_info
 from learnchat.views import user_home
-from learnchat.views import fund
-# from learnchat.views import upload_photo
+from findhistory.views import fund
 from learnchat.views import noticeinfo
 from learnchat.views import blackhole
 from learnchat.views import updateheadphoto
@@ -23,6 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
 from django.views.generic.base import RedirectView
+from findhistory.views import fundsecondpage
 
 
 urlpatterns = [
@@ -37,11 +37,11 @@ urlpatterns = [
     path('', include('comments.urls')),
     url(r'^user_info/', user_info),
     url(r'^user_home/', user_home),
-    # url(r'^upload_photo/', upload_photo),
     url(r'^noticeinfo/', noticeinfo),
     url(r'^blackhole/', blackhole),
     url(r'^updateheadphoto/', updateheadphoto),
     re_path(r'^media/(.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
     url(r'^favicon.ico$',RedirectView.as_view(url=r'static/images/favicon.ico')),
+    # url(r'^fundsecondpage/', fundsecondpage),
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

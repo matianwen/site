@@ -1,0 +1,145 @@
+<div style="background-color:#f4f5f5" xmlns="http://www.w3.org/1999/html">
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css %}<link href="{% static 'css/fund.css' %}" rel="stylesheet"/>{% endblock %}
+{% block title %}言行{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-10">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <!--
+                        <h2>发现新大陆</h2>
+                        <h4>正在拼命挖掘附近的历史...</h4>
+                        <h4>正在夜以继日开发中...</h4>
+                        -->
+                        <div id="navbar-collapse" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                              <li role="presentation" class="active"><a href="/fund/">热门</a></li>
+                              <li role="presentation"><a href="/fund/">最新</a></li>
+                              <li role="presentation"><a href="/fund/">推荐</a></li>
+                            </ul>
+
+                            <div style="text-align:right;">
+                                <p id="demo">获取你的位置：<button onclick="getLocation()">位置</button></p>
+                                <script>
+                                var x=document.getElementById("demo");
+                                function getLocation()
+                                  {
+                                  if (navigator.geolocation)
+                                    {
+                                    navigator.geolocation.getCurrentPosition(showPosition);
+                                    }
+                                  else{x.innerHTML="Geolocation is not supported by this browser.";}
+                                  }
+                                function showPosition(position)
+                                  {
+                                    var latlon=position.coords.latitude+","+position.coords.longitude;
+
+                                    var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+                                    +latlon+"&zoom=14&size=400x300&sensor=false";
+
+                                    document.getElementById("mapholder").innerHTML="<img src='"+img_url+"' />";
+                                  }
+                                </script>
+                            </div>
+                        </div>
+                        <hr>
+                        {% include "user/fundsecondpage.html" %}
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</div>
+
+
+
+
+
+
+
+<!--
+<head>
+<meta charset="utf-8" />
+<title>GIS开发利用html5获取经纬度</title>
+</head>
+
+<body>
+<span id="support">将下面的经纬度输入谷歌地图：</span>
+<div id="show">
+纬度：<span id="latitude"></span><br />
+经度：<span id="longitude"></span><br />
+经纬度准确度：<span id="accuracy"></span><br />
+海拔：<span id="altitude"></span><br />
+海拔高度的精确度：<span id="altitudeAcuracy"></span><br />
+朝向：<span id="heading"></span><br />
+速度：<span id="speed"></span>
+</div>
+<script type="text/javascript">
+var doc = document,
+    latitude = doc.getElementById('latitude'),
+    longitude = doc.getElementById('longitude'),
+    accuracy = doc.getElementById('accuracy'),
+    altitude = doc.getElementById('altitude'),
+    altitudeAcuracy = doc.getElementById('altitudeAcuracy'),
+    heading = doc.getElementById('heading'),
+    speed = doc.getElementById('speed'),
+    support = doc.getElementById('support'),
+    showDiv = doc.getElementById('show');
+function lodeSupport(){
+    if(navigator.geolocation){
+        support.innerHTML = '将下面的经纬度输入谷歌地图(纬度 经度)查看自己位置：';
+        showDiv.style.display = 'block';
+        navigator.geolocation.getCurrentPosition(updataPosition,showError);
+    }else{
+        support.innerHTML = '对不起，浏览器不支持！';
+        showDiv.style.display = 'none';
+    }
+}
+function updataPosition(position){
+    var latitudeP = position.coords.latitude,
+        longitudeP = position.coords.longitude,
+        accuracyP = position.coords.accuracy,
+        altitudeP = position.coords.altitude,
+        altitudeAcuracyP = position.coords.altitudeAcuracy,
+        headingP = position.coords.heading,
+        speedP = position.coords.speed;
+    latitude.innerHTML = latitudeP;
+    longitude.innerHTML = longitudeP;
+    accuracy.innerHTML = accuracyP;
+    altitude.innerHTML = altitudeP;
+    altitudeAcuracy.innerHTML = altitudeAcuracyP;
+    heading.innerHTML = headingP;
+    speed.innerHTML = speedP;
+}
+
+function showError(error)
+{
+  switch(error.code)
+    {
+    case error.PERMISSION_DENIED:
+      showDiv.innerHTML="用户拒绝访问地理位置"
+      break;
+    case error.POSITION_UNAVAILABLE:
+      showDiv.innerHTML="地理位置信息无法获取"
+      break;
+    case error.TIMEOUT:
+      showDiv.innerHTML="获取位置时间超时"
+      break;
+    case error.UNKNOWN_ERROR:
+      showDiv.innerHTML="我擦，这是一个未知的错误"
+      break;
+    }
+}
+
+window.addEventListener('load', lodeSupport , true);
+</script>
+</body>
+ -->

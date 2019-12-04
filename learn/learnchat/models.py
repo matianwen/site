@@ -56,7 +56,7 @@ class Information(models.Model):
         verbose_name_plural = '用户信息'
 
 
-# 用户名头像模型
+# 用户更新头像模型
 class Updateheadpoto(models.Model):
     username = models.CharField(max_length=16)
     avatar = models.FileField(upload_to="headimages/%Y/%m/%d/", default=u"headimages/default.png", max_length=100, verbose_name="头像")
@@ -65,4 +65,11 @@ class Updateheadpoto(models.Model):
 
     def __str__(self):
         return self.username
+
+    class Meta:
+        verbose_name = '更换头像'
+        verbose_name_plural = '更换头像'
+
+
+
 
