@@ -8,13 +8,13 @@
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
                 <div class="panel panel-default">
-                    <h3>资料设置</h3>
+                    <ul><h3>资料设置</h3></ul>
                     <hr/>
-                    <h4>{{request.session.user_name}}</h4>
                     <ul>
+                        <li><h4>{{request.session.user_name}}</h4></li>
                         <li>头像：<a href="/updateheadphoto/">修改头像</a></li>
-                        <li>性别：{{ usex.sex }}</li>
-                        <li>职位：</li>
+                        <li>性别：{{ userinfo.sex }}</li>
+                        <li>职位：教师</li>
                         <li>邮箱：{% if user.email %}{{ user.email}}{% else %}未绑定 <a href="">绑定邮箱</a>{% endif %} </li>
                         <li>最后一次登录时间：{{ username.last_login|date:"Y-m-d H:i:s" }}</li>
                     </ul>
@@ -23,5 +23,4 @@
         </div>
     </div>
 {% endblock %}
-
 </div>

@@ -1,0 +1,22 @@
+<div style="background-color:#f4f5f5">
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block css %}<link href="{% static 'css/userinfo.css' %}" rel="stylesheet"/>{% endblock %}
+{% block title %}言行{% endblock %}
+{% block content %}
+
+
+{% for recommend in recommendteta %}
+    <div class="containter">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="panel panel-default">
+                    <h4>{{ recommend.content }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
+
+</div>

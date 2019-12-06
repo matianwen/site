@@ -27,7 +27,7 @@ class Send(models.Model):
     Temp = models.CharField('作者', max_length=16)
     # tags = models.ManyToManyField(Tags, verbose_name='标签')
     see = models.IntegerField('浏览数', default=0)
-    recommend = models.BooleanField('推荐言寺', default=False)
+    recommend = models.BooleanField('推荐言行', default=False)
 
     def __str__(self):
         return self.content

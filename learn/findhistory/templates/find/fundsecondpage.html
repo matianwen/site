@@ -1,0 +1,13 @@
+{% load staticfiles %}
+{% block css %}<link href="{% static 'css/findhistory.css' %}" rel="stylesheet"/>{% endblock %}
+
+{% for nearhistory in findhistory %}
+    <div class="historypage">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="photo"><img width="200" height="120" class="js-img-show" id="avatarShow" src="{{nearhistory.photo.url}}"></div>
+                <div class="intro"><h4>{{ nearhistory.history }}</h4></div>
+            </div>
+        </div>
+    </div>
+{% endfor %}

@@ -5,13 +5,13 @@ from django import forms
 # 用户模型
 class User(models.Model):
     gender = (
-        ('male', '男'),
-        ('female', '女'),
+        ('男', '男'),
+        ('女', '女'),
     )
-    name = models.CharField(max_length=128, unique=True)
-    password = models.CharField(max_length=256)
-    email = models.EmailField(unique=True)
-    sex = models.CharField(max_length=32, choices=gender, default='男')
+    name = models.CharField('名字', max_length=128, unique=True)
+    password = models.CharField('密码', max_length=256)
+    email = models.EmailField('邮箱', unique=True)
+    sex = models.CharField('性别', max_length=32, choices=gender, default='男')
     time_now = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

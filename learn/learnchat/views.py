@@ -46,6 +46,8 @@ def send_content(request):
 # 用户信息设置视图
 def user_info(request):
     context = {}
+    context['userinfo'] = User.objects.all()
+    context['usersex'] = User.objects.filter()
     return render(request, 'user/userinfo.html', context)
 
 
@@ -54,12 +56,6 @@ def user_home(request):
     context = {}
     return render(request, 'user/userhome.html', context)
 
-'''
-# 发现视图
-def fund(request):
-    context = {}
-    return render(request, 'user/fund.html', context)
-'''
 
 # 消息通知视图
 def noticeinfo(request):
@@ -90,5 +86,9 @@ def updateheadphoto(request):
     return render(request, 'user/updateheadphoto.html', context)
 
 
-
+# 推荐详情视图
+def recommenddetails(request):
+    context = {}
+    context['recommendteta'] = Send.objects.filter(recommend=1)
+    return render(request, 'user/recommenddetails.html', context)
 

@@ -3,21 +3,24 @@
 {% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
 
 <!-- 用户、发布内容、发布时间 -->
+
 {% for chat in learnchats %}
     <div class="chat">
         <div class="panel panel-default">
             <div class="panel-body">
+                    {% for head in headpoto %}
+                        {% if chat.Temp == head.username %}
+                            <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{{head.avatar.url}}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
+                        {% endif %}
+                    {% endfor %}
 
-                {% for head in headpoto %}
-                    {% if chat.Temp == head.username %}
-                        <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{{head.avatar.url}}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
-
+                    <!--
+                    {% if request.session.user_name != head.username %}
+                            <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
                     {% endif %}
-                {% endfor %}
+                    -->
 
-
-
-                <h6>{{ chat.createTime | date:'Y-m-d H:i:s' }} <font color=#8a9aa9>来自</font></h6>
+                <h6>{{ chat.createTime | date:'Y-m-d H:i:s' }}</h6> <!--  <font color=#8a9aa9>来自</font>-->
                 <h5>{{ chat.content | linebreaksbr}}</h5>
                 <br/>
                 <hr/>
@@ -32,9 +35,6 @@
                       <a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>转发</a>
                   </div>
                 </div>
-
-
-
                 <!--导入newcomment.html文件-->
             </div>
         </div>

@@ -8,20 +8,16 @@
 
                 {% for head in headpoto %}
                     {% if request.session.user_name == head.username %}
-                        <h4><li><a href="/user_home/"><img src="{{head.avatar.url}}" width="60" height="60" class="js-img-show" id="avatarShow">&nbsp;&nbsp;<a href="/user_home/">{{ request.session.user_name }}</a></a></li></h4>
+                        <h4><li><a href="/user_home/"><img src="{{head.avatar.url}}" width="60" height="60" class="js-img-show" id="avatarShow">&nbsp;&nbsp;</a></li></h4>
                     {% endif %}
                 {% endfor %}
 
+                {% if request.session.user_name and request.session.is_login != head.username and head.username  %}
+                    <h4><li><a href="/user_home/"><img src="{% static 'headimages/default.png' %}" width="60" height="60" class="js-img-show" id="avatarShow">&nbsp;&nbsp;<a href="/user_home/">{{ request.session.user_name }}</a></a></li></h4>
+                {% endif %}
+
+                <h4><li><a href="/user_home/">{{ request.session.user_name }}</a></li></h4>
                 <HR>
-
-                <!--
-                {% for learn in learnchats %}
-                    {% if learn.Temp == request.session.user_name %}
-                        <h4><li>诗句：<a href="/user_home/">{{ learn.content|length }}</a></li></h4>
-                    {% endif %}
-                {% endfor %}
-                -->
-
                 <h4><li>诗句：<a href="/user_home/">{{ learnchats|length }}</a></li></h4>
                 <h4><li>诗友：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
                 <h4><li>获赞：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>

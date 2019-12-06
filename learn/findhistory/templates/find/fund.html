@@ -4,7 +4,6 @@
 {% block css %}<link href="{% static 'css/fund.css' %}" rel="stylesheet"/>{% endblock %}
 {% block title %}言行{% endblock %}
 {% block content %}
-
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-10">
@@ -25,32 +24,29 @@
                             <div style="text-align:right;">
                                 <p id="demo">获取你的位置：<button onclick="getLocation()">位置</button></p>
                                 <script>
-                                var x=document.getElementById("demo");
-                                function getLocation()
-                                  {
-                                  if (navigator.geolocation)
+                                    var x=document.getElementById("demo");
+                                    function getLocation()
                                     {
-                                    navigator.geolocation.getCurrentPosition(showPosition);
+                                          if (navigator.geolocation)
+                                          {
+                                                navigator.geolocation.getCurrentPosition(showPosition);
+                                          }
+                                          else{x.innerHTML="Geolocation is not supported by this browser.";}
                                     }
-                                  else{x.innerHTML="Geolocation is not supported by this browser.";}
-                                  }
-                                function showPosition(position)
-                                  {
-                                    var latlon=position.coords.latitude+","+position.coords.longitude;
+                                    function showPosition(position)
+                                    {
+                                        var latlon=position.coords.latitude+","+position.coords.longitude;
 
-                                    var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
-                                    +latlon+"&zoom=14&size=400x300&sensor=false";
+                                        var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+                                        +latlon+"&zoom=14&size=400x300&sensor=false";
 
-                                    document.getElementById("mapholder").innerHTML="<img src='"+img_url+"' />";
-                                  }
+                                        document.getElementById("mapholder").innerHTML="<img src='"+img_url+"' />";
+                                    }
                                 </script>
                             </div>
                         </div>
                         <hr>
-                        {% include "user/fundsecondpage.html" %}
-
-
-
+                        {% include "find/fundsecondpage.html" %}
                     </div>
                 </div>
             </div>
