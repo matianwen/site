@@ -1,15 +1,31 @@
+{% load staticfiles %}
+{% block css %}<link href="{% static 'css/comment.css' %}" rel="stylesheet"/>{% endblock %}
+<head>
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+</head>
+
 <div>
     <!-- 发表评论 -->
-    <hr>
     {% if request.session.is_login %}
-        <form action="{% url 'commentviews' %}" method="POST">
+        <!--
+        <script type="text/javascript">
+            $(function(){
+            //页面加载完毕后开始执行的事件
+            $(".reply_btn").click(function(){
+                $(".form-group").remove();
+                $(this).parent().append("<div class='form-group'><textarea name='content' rows='1'></textarea><br/><input type='submit' value='发表' /></div>");
+            });
+        });
+        </script>
+        -->
+        <form action="commentviews" method="POST">
         {% csrf_token %}
             <div class="form-group">
                 <textarea type="text" class="form-control" name="content" rows="1"></textarea>
-                <input type="hidden" name="content_type" value="comments">
-                <input type="hidden" name="object_id" value="{{ comments.pk }}">
+                <input type="hidden" name="object_id" value="{{ chat.id }}">
+                <input type="hidden" name="content_type" value="Send">
+                <input type="submit" class="btn btn-primary" value="发送"></input>
             </div>
-            <button type="submit" class="btn btn-primary ">发送</button>
         </form>
         <br>
     {% else %}
@@ -19,11 +35,8 @@
         </h5>
         <br>
     {% endif %}
-
-    <!-- 显示评论 <h4>共有{{ comments.count }}条评论</h4>-->
-
+    <!-- 显示评论 <h4>共有{{ comments.count }}条评论</h4> -->
     <div>
-        <p>评论:</p>
         {% for comment in comments %}
             <hr>
             <h6>{{ comment.chats_user }}</h6>

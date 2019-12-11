@@ -18,8 +18,8 @@ def send_content(request):
         print('这个是GET请求...')
         return redirect("index")
     else:
-        send_fb = Send()  # 新建对象
-
+        # 新建对象
+        send_fb = Send()
         # 获取content内容
         send_fb.content = request.POST.get('content')
         print('获取发表内容:', send_fb.content)

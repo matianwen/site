@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('commentviews/', views.commentviews, name='commentviews'),
+    path('commentviews', views.commentviews, name='commentviews'),
 ]

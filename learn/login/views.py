@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render, redirect, reverse
 from django.shortcuts import render_to_response
 from . models import *
@@ -11,6 +11,7 @@ from learnchat.models import Information
 from django.db.models.aggregates import Count
 from comments.models import Comments
 from learnchat.models import Updateheadpoto
+import time
 
 
 # 主页视图
@@ -40,6 +41,7 @@ def login(request):
                     request.session['is_login'] = True
                     request.session['user_id'] = user.id
                     request.session['user_name'] = user.name
+                    time.sleep(1) # 延时一秒
                     return redirect('index')
                 else:
                     message = "密码不正确!"

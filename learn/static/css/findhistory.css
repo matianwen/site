@@ -1,7 +1,12 @@
 .photo{
-    float:left;
-    width:20%;
+    float: left;
+    width: 20%;
 }
 .intro{
-    float:right;
-    width:75%;
+    float: right;
+    width: 75%;
+}
+div.intro a {
+    color: #17181a;
+    text-decoration: none;
+}

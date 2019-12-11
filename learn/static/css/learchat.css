@@ -87,3 +87,22 @@ div.recom a {
     color: black;
     text-decoration: none;
 }
+/*
+.btt .backtotop {
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    background: url(http://localhost:8000/media/headimages/top.gif);
+    background-image: url(http://localhost:8000/media/headimages/top.gif);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    cursor: pointer;
+}*/
