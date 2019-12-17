@@ -15,7 +15,6 @@ class Comments(models.Model):
     content = models.TextField('评论内容')
     pub_date = models.DateTimeField('评论时间', auto_now_add=True)
     chats_user = models.CharField('评论者', max_length=16)
-
     # chats_user = models.ForeignKey('login.User', verbose_name='评论作者', on_delete=models.CASCADE)
     # user_like = models.ManyToManyField(User, verbose_name='点赞者', related_name='comments_liked')
 

@@ -18,16 +18,17 @@
         });
         </script>
         -->
+        <br/>
         <form action="commentviews" method="POST">
         {% csrf_token %}
-            <div class="form-group">
+            {{ comment_form }}
+            <div class="form-group" style="text-align:right;">
                 <textarea type="text" class="form-control" name="content" rows="1"></textarea>
                 <input type="hidden" name="object_id" value="{{ chat.id }}">
-                <input type="hidden" name="content_type" value="Send">
-                <input type="submit" class="btn btn-primary" value="发送"></input>
+                <input type="hidden" name="content_type" value="Send"><br/>
+                <input type="submit" class="btn btn-info" value="评论"></input>
             </div>
         </form>
-        <br>
     {% else %}
         <br>
         <h5 class="row justify-content-center">
@@ -35,13 +36,15 @@
         </h5>
         <br>
     {% endif %}
-    <!-- 显示评论 <h4>共有{{ comments.count }}条评论</h4> -->
+    <!-- 显示评论 -->
     <div>
         {% for comment in comments %}
-            <hr>
-            <h6>{{ comment.chats_user }}</h6>
-            <h6>{{ comment.content }}</h6>
-            <h6>{{ comment.pub_date|date:"Y-m-d H:i:s" }}</h6>
+            {% if chat.id == comment.object_id %}
+                <hr>
+                <h6><img width="38" height="38" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ comment.chats_user }}</h6>
+                <h6>{{ comment.content }}</h6>
+                <h6>{{ comment.pub_date|date:"Y-m-d H:i:s" }}</h6>
+            {% endif %}
         {% endfor %}
     </div>
 

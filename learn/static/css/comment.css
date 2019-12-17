@@ -162,9 +162,17 @@ body{font-family: "Microsoft Yahei";}
 /*----------评论区域 end----------*/
 
 
-
-
-
+/*
+textarea.form-control {
+    position: relative;
+    padding: .6rem 1rem;
+    font-size: 1.083rem;
+    line-height: 1.7;
+    color: #17181a;
+    outline: none;
+    min-height: 1.3em;
+}
+*/
 
 
 

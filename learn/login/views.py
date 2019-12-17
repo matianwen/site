@@ -12,6 +12,8 @@ from django.db.models.aggregates import Count
 from comments.models import Comments
 from learnchat.models import Updateheadpoto
 import time
+from django.contrib.contenttypes.models import ContentType
+from comments.forms import CommentForm
 
 
 # 主页视图
@@ -19,7 +21,24 @@ def index(request):
     contexts = {}
     contexts['learnchats'] = Send.objects.all().order_by("-createTime")  # 显示所有发布内容视图
     contexts['recommendcontent'] = Send.objects.filter(recommend=1)  # 热点推荐视图
-    contexts['comments'] = Comments.objects.all()
+
+    learnchat_content_type = ContentType.objects.get_for_model(Send)
+    comments = Comments.objects.filter(content_type=learnchat_content_type)
+    contexts['comments'] = comments
+    # contexts['comments'] = Comments.objects.all()
+
+
+    #data = {}
+    #data['content_type'] = learnchat_content_type.model
+    #data['object_id'] = Send.objects.filter()
+    #contexts['comment_form'] = CommentForm(initial=data)
+
+    #comment_form = CommentForm(request.POST)
+    #if comment_form.is_valid():
+       # content_type = comment_form.cleaned_data['content_type']
+        #object_id = comment_form.cleaned_data['object_id']
+    #contexts['comment_form'] = comment_form
+
     contexts['headpoto'] = Updateheadpoto.objects.all()   #  filter(username=request.session.get('is_login'))
     return render(request, 'login/index.html', contexts)
 
