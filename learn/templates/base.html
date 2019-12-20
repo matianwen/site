@@ -24,7 +24,7 @@
     <link href="{% static 'css/noticeinfo.css' %}" rel="stylesheet"/>
     <!-- <link rel="SHORTCUT ICON" href="{% static 'images/favicon.ico' %}"/> -->
 
-    {% block css %}{% endblock %}
+    {% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
   </head>
   <body>
     <nav class="navbar navbar-default" role="navigation">
@@ -66,7 +66,7 @@
                 <li><a href="/user_home/"><b>诗人:</b></a></li>
                 {% for head in headpoto %}
                   {% if request.session.user_name == head.username %}
-                    <li><img width="35" height="35" class="js-img-show" id="avatarShow" src={{head.avatar.url}}></li>
+                    <li><img width="35" height="35" class="js-img-show-head" id="avatarShow" src={{head.avatar.url}}></li>
                   {% endif %}
                 {% endfor %}
                 <li class="dropdown">

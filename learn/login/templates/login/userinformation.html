@@ -8,12 +8,12 @@
 
                 {% for head in headpoto %}
                     {% if request.session.user_name == head.username %}
-                        <h4><li><a href="/user_home/"><img src="{{head.avatar.url}}" width="60" height="60" class="js-img-show" id="avatarShow">&nbsp;&nbsp;</a></li></h4>
+                        <h4><li><a href="/user_home/"><img src="{{head.avatar.url}}" width="60" height="60" class="js-img-show-head" id="avatarShow">&nbsp;&nbsp;</a></li></h4>
                     {% endif %}
                 {% endfor %}
 
                 {% if request.session.user_name and request.session.is_login != head.username and head.username  %}
-                    <h4><li><a href="/user_home/"><img src="{% static 'headimages/default.png' %}" width="60" height="60" class="js-img-show" id="avatarShow">&nbsp;&nbsp;<a href="/user_home/">{{ request.session.user_name }}</a></a></li></h4>
+                    <h4><li><a href="/user_home/"><img src="{% static 'headimages/default.png' %}" width="60" height="60" class="js-img-show-head" id="avatarShow">&nbsp;&nbsp;<a href="/user_home/">{{ request.session.user_name }}</a></a></li></h4>
                 {% endif %}
 
                 <h4><li><a href="/user_home/">{{ request.session.user_name }}</a></li></h4>

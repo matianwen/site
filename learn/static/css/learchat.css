@@ -20,6 +20,7 @@ div.chat h4 {
     font-size: 1.7rem;
     font-weight: 600;
     margin-left:27px;
+    margin-bottom: -20px;
 }
 div.chat h4 a {
     margin-left: 0px;
@@ -75,18 +76,54 @@ div.chat button btn btn-default {
     line-height: 0.5;
 }
 div.chat hr {
-    margin-bottom: 5px;
+    margin-bottom: -15px;
 }
 div.btn-group-justified {
     margin:0px auto;
-    margin-top:12px;
+    margin-top:25px;
     margin-left:85px;
+    margin-bottom: 15px;
 }
-
 div.recom a {
     color: black;
     text-decoration: none;
 }
+div.form-comment h6 a {
+    margin-left: -45px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+textarea.form-control {
+    resize:none;
+}
+div.btn-group btn-group-justified btn-group a {
+    text-decoration: none;
+    color: #8a9aa9;
+}
+div.send-submit{
+    line-height: 0.6;
+}
+div.comment-submit {
+    margin-top: 10px;
+}
+div.form-group {
+    margin-top: 10px;
+}
+div.panel-body {
+    margin-bottom: -20px;
+}
+div.btn-group a {
+    color: #8a9aa9;
+    text-decoration: none;
+}
+img#avatarShow.js-img-show-head {
+    margin-top: 7px;
+    border-radius: 50%;
+}
+
+
+
 /*
 .btt .backtotop {
     display: block;

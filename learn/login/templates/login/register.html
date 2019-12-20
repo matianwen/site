@@ -1,6 +1,9 @@
-{% extends 'base.html' %}
+
 {% load staticfiles %}
-{% block title %}注册{% endblock %}
+{% block title %}{% endblock %}
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 {% block css %}<link href="{% static 'css/register.css' %}" rel="stylesheet"/>{% endblock %}
 {% block content %}
     <div class="container">
@@ -13,7 +16,10 @@
 
                 {% csrf_token %}
 
-                <h2 class="text-center">欢迎注册</h2>
+                <div class="welcom-register">
+                    <h2 class="text-center"><b>欢迎注册</b></h2>
+                </div>
+
                 <div class="form-group">
                     {{ register_form.username.label_tag }}
                     {{ register_form.username}}
@@ -39,13 +45,19 @@
                     {{ register_form.captcha.label_tag }}
                     {{ register_form.captcha }}
                 </div>
-
-                <button type="reset" class="btn btn-default pull-left">重置</button>
-                <button type="submit" class="btn btn-primary pull-right">提交</button>
-
+                <div class="button-register">
+                    <button type="reset" class="btn btn-primary pull-left" style="background-color:#007fff">重置</button>
+                    <button type="button" class="btn btn-primary pull-left" style="background-color:#007fff"><a href="/login/">登录</button></a>
+                    <button type="submit" class="btn btn-primary pull-right" style="background-color:#007fff">注册</button>
+                </div>
             </form>
         </div>
     </div>
 {% endblock %}
-
+<div class="footer">
+    <center>
+        <span class="style4">Copyright @ 2020<b>言行</b> |</span>
+        <span class="style4">粤ICP备19060781号-1</span>
+    </center>
+</div>
 

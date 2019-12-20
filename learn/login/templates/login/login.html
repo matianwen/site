@@ -1,7 +1,11 @@
-{% extends 'base.html' %}
+
 {% load staticfiles %}
-{% block title %}登录{% endblock %}
-{% block css %}<link href="{% static 'css/login.css' %}" rel="stylesheet"/>{% endblock %}
+{% block title %}{% endblock %}
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% block css %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet" xmlns="http://www.w3.org/1999/html"/>{% endblock %}
 
 
 {% block content %}
@@ -15,8 +19,11 @@
 
               {% csrf_token %}
 
-              <h2 class="text-center">欢迎登录</h2>
-              <h2 class="text-center">言行</h2>
+              <!-- <h2 class="text-center">欢迎登录</h2> -->
+              <div class="yanxing-name">
+                <h2 class="text-center"><b>言行</b></h2>
+              </div>
+
               <!--
               <div class="form-group">
                 <label for="id_username">用户名：</label>
@@ -28,27 +35,41 @@
               </div>
               -->
 
-              <div class="form-group">
+              <div class="form-group-username">
                   {{ login_form.username.label_tag }}
+              </div>
+              <div class="form-username">
                   {{ login_form.username}}
               </div>
-              <div class="form-group">
+
+              <div class="form-group-password">
                   {{ login_form.password.label_tag }}
+              </div>
+              <div class="form-password">
                   {{ login_form.password }}
               </div>
-
-              <div class="from-group">
-                  {{ login_form.captcha.errors }}
+              <h6><a href="{% url 'index' %}">忘记密码</a></h6>
+              <div class="from-group-captcha">
                   {{ login_form.captcha.label_tag }}
+              </div>
+              <div class="from-group-login">
                   {{ login_form.captcha }}
+                  {{ login_form.captcha.errors }}
               </div>
 
-
-              <button type="reset" class="btn btn-default pull-left">重置</button>
-              <button type="submit" class="btn btn-primary pull-right">提交</button>
+              <div class="button-reset">
+                <button type="reset" class="btn btn-primary pull-left" style="background-color:#007fff">重置</button>
+                <button type="button" class="btn btn-primary pull-left" style="background-color:#007fff"><a href="/register/">注册</button></a>
+                <button type="submit" class="btn btn-primary pull-right" style="background-color:#007fff">登录</button>
+              </div>
 
           </form>
         </div>
     </div> <!-- /container -->
 {% endblock %}
-
+<div class="footer">
+    <center>
+        <span class="style4">Copyright @ 2020<b>言行</b> |</span>
+        <span class="style4">粤ICP备19060781号-1</span>
+    </center>
+</div>

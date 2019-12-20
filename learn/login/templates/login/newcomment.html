@@ -1,51 +1,38 @@
 {% load staticfiles %}
-{% block css %}<link href="{% static 'css/comment.css' %}" rel="stylesheet"/>{% endblock %}
-<head>
-    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
-</head>
+{% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
 
 <div>
     <!-- 发表评论 -->
     {% if request.session.is_login %}
-        <!--
-        <script type="text/javascript">
-            $(function(){
-            //页面加载完毕后开始执行的事件
-            $(".reply_btn").click(function(){
-                $(".form-group").remove();
-                $(this).parent().append("<div class='form-group'><textarea name='content' rows='1'></textarea><br/><input type='submit' value='发表' /></div>");
-            });
-        });
-        </script>
-        -->
-        <br/>
         <form action="commentviews" method="POST">
         {% csrf_token %}
             {{ comment_form }}
-            <div class="form-group" style="text-align:right;">
-                <textarea type="text" class="form-control" name="content" rows="1"></textarea>
+            <div class="form-group" style="text-align:right;display:none">
+                <textarea type="text" placeholder="你有何见解呢&hellip;" class="form-control" name="content" rows="1"></textarea>
                 <input type="hidden" name="object_id" value="{{ chat.id }}">
-                <input type="hidden" name="content_type" value="Send"><br/>
-                <input type="submit" class="btn btn-info" value="评论"></input>
+                <input type="hidden" name="content_type" value="Send">
+
+                <div class="comment-submit">
+                    <input type="submit" class="btn btn-primary" style="background-color:#007fff" value="评论"></input>
+                </div>
             </div>
         </form>
     {% else %}
-        <br>
-        <h5 class="row justify-content-center">
-            请<a href="login">登录</a>评论
-        </h5>
-        <br>
+        <div class="login-comment" style="display:none">
+            <h5 class="row justify-content-center">
+                请<a href="login">登录</a>评论
+            </h5>
+        </div>
     {% endif %}
     <!-- 显示评论 -->
-    <div>
+    <div class="form-comment" style="display:none">
         {% for comment in comments %}
             {% if chat.id == comment.object_id %}
                 <hr>
-                <h6><img width="38" height="38" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ comment.chats_user }}</h6>
+                <h6><a href="/user_home/"><img width="38" height="38" class="js-img-show-head" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ comment.chats_user }}</a></h6>
                 <h6>{{ comment.content }}</h6>
                 <h6>{{ comment.pub_date|date:"Y-m-d H:i:s" }}</h6>
             {% endif %}
         {% endfor %}
     </div>
-
 </div>
