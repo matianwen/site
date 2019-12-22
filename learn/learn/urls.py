@@ -24,6 +24,7 @@ from django.views.static import serve
 from django.views.generic.base import RedirectView
 from findhistory.views import fundsecondpage
 from learnchat.views import recommenddetails
+from login.views import resetpassword
 
 
 urlpatterns = [
@@ -45,5 +46,6 @@ urlpatterns = [
     url(r'^favicon.ico$',RedirectView.as_view(url=r'static/images/favicon.ico')),
     # url(r'^fundsecondpage/', fundsecondpage),
     url(r'^recommenddetails/', recommenddetails),
+    url(r'^resetpassword/', resetpassword),
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

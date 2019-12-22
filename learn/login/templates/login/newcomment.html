@@ -4,11 +4,13 @@
 <div>
     <!-- 发表评论 -->
     {% if request.session.is_login %}
-        <form action="commentviews" method="POST">
+        <form action="commentviews" method="POST" style="padding: 0px;margin: 0px;">
         {% csrf_token %}
             {{ comment_form }}
             <div class="form-group" style="text-align:right;display:none">
-                <textarea type="text" placeholder="你有何见解呢&hellip;" class="form-control" name="content" rows="1"></textarea>
+                <div class="comment-forms">
+                    <textarea type="text" placeholder="你有何见解呢&hellip;" class="form-control" name="content" rows="1"></textarea>
+                </div>
                 <input type="hidden" name="object_id" value="{{ chat.id }}">
                 <input type="hidden" name="content_type" value="Send">
 

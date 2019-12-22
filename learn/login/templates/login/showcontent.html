@@ -6,13 +6,12 @@
 <script type="text/javascript">
     $(document).ready(function(){
       $(".reply_btn").click(function(){
-        $(".form-group").toggle(500);
-        $(".form-comment").toggle(500);
+        $(".form-group").toggle();
+        $(".form-comment").toggle();
         $(".login-comment").toggle();
       });
     });
 </script>
-
 <!-- 用户、发布内容、发布时间 -->
 {% for chat in learnchats %}
     <div class="chat">
@@ -43,7 +42,7 @@
                         <a href="javascript:;" class="forwarding_btn"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>转发</a>
                     </div>
                 </div>
-                <!--导入评论模块newcomment.html文件-->
+                <!--导入评论模块newcomment.html文件 -->
                 {% include "login/newcomment.html" %}
             </div>
         </div>

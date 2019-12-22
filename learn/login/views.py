@@ -128,5 +128,11 @@ def hash_code(s, salt='login'):
     return h.hexdigest()
 
 
+# 重置密码视图
+def resetpassword(request):
+    contexts = {}
+    referer = request.META.get('HTTP_REFERER', reverse('index'))
+    # if not request.session.get('is_login', None):
+        # return render(request, 'error.html', {'message': '忘记密码了吧,让你不记密码 :-)', 'redirect_to': referer})
 
-
+    return render(request, 'login/resetpassword.html', contexts)
