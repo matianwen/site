@@ -51,7 +51,8 @@ div.form-group-username {
     margin-top:50px
 }
 div.yanxing-name h2 {
-    margin-top: 50px;
+    margin-top: 40px;
+    color: #007fff;
 }
 input#id_captcha_1 {
     width: 210px;

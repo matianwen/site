@@ -21,6 +21,7 @@ def index(request):
     contexts = {}
     contexts['learnchats'] = Send.objects.all().order_by("-createTime")  # 显示所有发布内容视图
     contexts['recommendcontent'] = Send.objects.filter(recommend=1)  # 热点推荐视图
+    contexts['userlearnnum'] = Send.objects.filter(Temp=request.session.get('user_name'))
 
     learnchat_content_type = ContentType.objects.get_for_model(Send)
     comments = Comments.objects.filter(content_type=learnchat_content_type)

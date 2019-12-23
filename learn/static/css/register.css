@@ -26,8 +26,9 @@ div.footer {
     position: absolute;
 }
 div.welcom-register h2 {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 30px;
+    color: #007fff;
 }
 input#id_captcha_1 {
     width: 210px;

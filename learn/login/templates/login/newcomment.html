@@ -4,7 +4,7 @@
 <div>
     <!-- 发表评论 -->
     {% if request.session.is_login %}
-        <form action="commentviews" method="POST" style="padding: 0px;margin: 0px;">
+        <form action="commentviews" method="POST" style="padding:0px;margin:0px;">
         {% csrf_token %}
             {{ comment_form }}
             <div class="form-group" style="text-align:right;display:none">
@@ -13,7 +13,6 @@
                 </div>
                 <input type="hidden" name="object_id" value="{{ chat.id }}">
                 <input type="hidden" name="content_type" value="Send">
-
                 <div class="comment-submit">
                     <input type="submit" class="btn btn-primary" style="background-color:#007fff" value="评论"></input>
                 </div>
@@ -31,9 +30,15 @@
         {% for comment in comments %}
             {% if chat.id == comment.object_id %}
                 <hr>
-                <h6><a href="/user_home/"><img width="38" height="38" class="js-img-show-head" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ comment.chats_user }}</a></h6>
-                <h6>{{ comment.content }}</h6>
-                <h6>{{ comment.pub_date|date:"Y-m-d H:i:s" }}</h6>
+                <div class="headimg-username">
+                    <h6><a href="/user_home/"><img width="38" height="38" class="js-img-show-head" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ comment.chats_user }}</a></h6>
+                </div>
+                <div class="comment-content">
+                    <h6>{{ comment.content }}</h6>
+                </div>
+                <div class="comment-date">
+                    <h6>{{ comment.pub_date|date:"Y-m-d H:i:s" }}</h6>
+                </div>
             {% endif %}
         {% endfor %}
     </div>
