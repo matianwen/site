@@ -12,18 +12,15 @@
     <div class="container">
         <div class="col-md-4 col-md-offset-4">
           <form class='form-login' action="/login/" method="post">
-
               {% if message %}
                   <div class="alert alert-warning">{{ message }}</div>
               {% endif %}
 
               {% csrf_token %}
-
               <!-- <h2 class="text-center">欢迎登录</h2> -->
               <div class="yanxing-name">
                 <h2 class="text-center"><b>言行</b></h2>
               </div>
-
               <!--
               <div class="form-group">
                 <label for="id_username">用户名：</label>
@@ -34,42 +31,43 @@
                 <input type="password" name='password' class="form-control" id="id_password" placeholder="Password" required>
               </div>
               -->
+              <div class="panel panel-default">
+                  <div class="panel-body">
 
-              <div class="form-group-username">
-                  {{ login_form.username.label_tag }}
+                      <div class="form-group-username">
+                          {{ login_form.username.label_tag }}
+                      </div>
+                      <div class="form-username">
+                          {{ login_form.username}}
+                      </div>
+                      <div class="form-group-password">
+                          {{ login_form.password.label_tag }}
+                      </div>
+                      <div class="form-password">
+                          {{ login_form.password }}
+                      </div>
+                      <h6><a href="/resetpassword/">忘记密码</a></h6>
+                      <div class="from-group-captcha">
+                          {{ login_form.captcha.label_tag }}
+                      </div>
+                      <div class="from-group-login">
+                          {{ login_form.captcha }}
+                          {{ login_form.captcha.errors }}
+                      </div>
+                      <div class="button-reset">
+                        <button type="reset" class="btn btn-primary pull-left" style="background-color:#007fff">重置</button>
+                        <button type="button" class="btn btn-primary pull-left" style="background-color:#007fff"><a href="/register/">注册</button></a>
+                        <button type="submit" class="btn btn-primary pull-right" style="background-color:#007fff">登录</button>
+                      </div>
+                  </div>
               </div>
-              <div class="form-username">
-                  {{ login_form.username}}
-              </div>
-
-              <div class="form-group-password">
-                  {{ login_form.password.label_tag }}
-              </div>
-              <div class="form-password">
-                  {{ login_form.password }}
-              </div>
-              <h6><a href="/resetpassword/">忘记密码</a></h6>
-              <div class="from-group-captcha">
-                  {{ login_form.captcha.label_tag }}
-              </div>
-              <div class="from-group-login">
-                  {{ login_form.captcha }}
-                  {{ login_form.captcha.errors }}
-              </div>
-
-              <div class="button-reset">
-                <button type="reset" class="btn btn-primary pull-left" style="background-color:#007fff">重置</button>
-                <button type="button" class="btn btn-primary pull-left" style="background-color:#007fff"><a href="/register/">注册</button></a>
-                <button type="submit" class="btn btn-primary pull-right" style="background-color:#007fff">登录</button>
-              </div>
-
           </form>
         </div>
     </div> <!-- /container -->
 {% endblock %}
 <div class="footer">
     <center>
-        <span class="style4">Copyright @ 2020<b>言行</b> |</span>
+        <span class="style4">Copyright @ 2019-2020<b>言行</b> |</span>
         <span class="style4">粤ICP备19060781号-1</span>
     </center>
 </div>

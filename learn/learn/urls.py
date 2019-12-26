@@ -25,6 +25,8 @@ from django.views.generic.base import RedirectView
 from findhistory.views import fundsecondpage
 from learnchat.views import recommenddetails
 from login.views import resetpassword
+from login.views import useragreement
+from login.views import privacyagreement
 
 
 urlpatterns = [
@@ -47,5 +49,7 @@ urlpatterns = [
     # url(r'^fundsecondpage/', fundsecondpage),
     url(r'^recommenddetails/', recommenddetails),
     url(r'^resetpassword/', resetpassword),
+    url(r'^useragreement/', useragreement),
+    url(r'^privacyagreement/', privacyagreement),
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

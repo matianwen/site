@@ -137,3 +137,15 @@ def resetpassword(request):
         # return render(request, 'error.html', {'message': '忘记密码了吧,让你不记密码 :-)', 'redirect_to': referer})
 
     return render(request, 'login/resetpassword.html', contexts)
+
+
+# 注册登录协议视图
+def useragreement(request):
+    contexts = {}
+    return render(request, 'login/useragreement.html', contexts)
+
+
+# 隐私协议视图
+def privacyagreement(request):
+    contexts = {}
+    return render(request, 'login/privacyagreement.html', contexts)

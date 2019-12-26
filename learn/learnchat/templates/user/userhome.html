@@ -4,18 +4,53 @@
 {% block css %}<link href="{% static 'css/userhome.css' %}" rel="stylesheet"/>{% endblock %}
 {% block title %}言行{% endblock %}
 {% block content %}
+
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-10">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h2>个人主页</h2>
-                        <h3>{{ request.session.user_name }}</h3>
-                        <h4>言行：</h4>
-                        <h4>正在夜以继日开发中...</h4>
+
+                        <div class="myhome">
+                            <div class="myheadphoto" style="display:inline;float:left;">
+                                <img width="80" height="80" class="js-img-show-head" id="avatarShow" src="{% static 'headimages/default.png' %}">
+                            </div>
+                            <div class="myname" style="display:inline;float:left;">
+                                <h3>{{ request.session.user_name }}</h3>
+                            </div>
+                            <div class="updateinfo" style="display:inline;float:right;">
+                                <a href="/user_info/"><button type="button" class="btn btn-primary">编辑个人资料</button></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-8 col-md-10">
+                <div class="panel panel-default">
+                    <div class="content-dynamic">
+                        <h4>动态</h4>
+                    </div>
+                </div>
+            </div>
+            {% for mecontent in allcontent %}
+                <div class="col-xs-12 col-sm-8 col-md-10">
+                    <div class="panel panel-default">
+                        <div class="mycontent">
+                            {% if request.session.user_name == mecontent.Temp %}
+                                <div class="username-home">
+                                    <h5>{{ mecontent.Temp }}</h5>
+                                </div>
+                                <div class="username-content">
+                                    <h5>{{ mecontent.content }}</h5>
+                                </div>
+                                <div class="content-time">
+                                    <h6>{{ mecontent.createTime | date:'Y-m-d H:i:s' }}</h6>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

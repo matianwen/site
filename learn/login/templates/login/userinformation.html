@@ -15,12 +15,15 @@
                 {% if request.session.user_name and request.session.is_login != head.username and head.username  %}
                     <h4><li><a href="/user_home/"><img src="{% static 'headimages/default.png' %}" width="60" height="60" class="js-img-show-head" id="avatarShow">&nbsp;&nbsp;<a href="/user_home/">{{ request.session.user_name }}</a></a></li></h4>
                 {% endif %}
-
-                <h4><li><a href="/user_home/">{{ request.session.user_name }}</a></li></h4>
+                <div class="username-info">
+                    <h4><li><a href="/user_home/">{{ request.session.user_name }}</a></li></h4>
+                </div>
                 <HR>
-                <h4><li>诗句：<a href="/user_home/">{{ userlearnnum|length }}</a></li></h4>
-                <h4><li>诗友：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
-                <h4><li>获赞：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
+                <div class="usersend-information">
+                    <h4><li>诗句：<a href="/user_home/">{{ userlearnnum|length }}</a></li></h4>
+                    <h4><li>诗友：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
+                    <h4><li>获赞：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
+                </div>
             </ul>
         </div>
     </div>

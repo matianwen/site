@@ -55,7 +55,7 @@ div.body {
 div.panel-body li {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #2e3135;
+    color: #8a93a0;
 }
 div.bottom.style4 {
     position: absolute;
@@ -154,6 +154,10 @@ div.comment-content {
 div.comment-date {
     color: #778899;
 }
+div.username-info h4 li a {
+    margin: 0 auto;
+}
+
 
 
 /*

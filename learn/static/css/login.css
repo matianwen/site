@@ -42,17 +42,17 @@ div.button-reset a {
     text-decoration: none;
 }
 div.footer {
-    bottom:15px;
+    bottom: 5px;
     width: 100%;
-    position:absolute;
+    position: absolute;
 }
 div.form-group-username {
     width: 165px;
-    margin-top:50px
+    margin-top: 20px
 }
 div.yanxing-name h2 {
-    margin-top: 40px;
-    color: #007fff;
+    margin-top: 0px;
+    color: #2828FF;
 }
 input#id_captcha_1 {
     width: 210px;
@@ -61,6 +61,10 @@ input#id_captcha_1 {
 div.button-reset {
     margin-top: 20px;
 }
+div.panel.panel-default {
+    margin-top: 20px;
+}
+
 
 /*
 div.container {

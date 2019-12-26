@@ -21,16 +21,22 @@ div.button-register a {
     text-decoration: none;
 }
 div.footer {
-    bottom: 15px;
+    bottom: 5px;
     width: 100%;
     position: absolute;
 }
 div.welcom-register h2 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: #007fff;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #2828FF;
 }
 input#id_captcha_1 {
     width: 210px;
     height: 35px;
+}
+div.data-agreement {
+    margin-bottom: 10px;
+}
+div.data-agreement a {
+    text-decoration: none;
 }
