@@ -12,9 +12,13 @@
                     <div class="panel-body">
 
                         <div class="myhome">
-                            <div class="myheadphoto" style="display:inline;float:left;">
-                                <img width="80" height="80" class="js-img-show-head" id="avatarShow" src="{% static 'headimages/default.png' %}">
-                            </div>
+                            {% for headpoto in headimge %}
+                                {% if request.session.user_name == headpoto.username %}
+                                    <div class="myheadphoto" style="display:inline;float:left;">
+                                        <img width="80" height="80" class="js-img-show-head" id="avatarShow" src="{{headpoto.avatar.url}}">
+                                    </div>
+                                {% endif %}
+                            {% endfor%}
                             <div class="myname" style="display:inline;float:left;">
                                 <h3>{{ request.session.user_name }}</h3>
                             </div>

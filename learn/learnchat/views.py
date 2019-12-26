@@ -47,6 +47,7 @@ def send_content(request):
 def user_info(request):
     context = {}
     context['userinfo'] = User.objects.all()
+    context['headimge'] = Updateheadpoto.objects.all()
     # context['usersex'] = User.objects.filter(sex=request.session.get('get_sex_display '))
     return render(request, 'user/userinfo.html', context)
 
@@ -56,6 +57,7 @@ def user_home(request):
     context = {}
     # select * from learnchat_send where Temp='陈建国';
     context['allcontent'] = Send.objects.all().order_by("-createTime")
+    context['headimge'] = Updateheadpoto.objects.all()
     # context['mycontentnum'] = Send.objects.filter(Temp=request.session.get('user_name')).order_by("-createTime")  # 查询某个用户发表的内容
     return render(request, 'user/userhome.html', context)
 
