@@ -31,7 +31,11 @@
             {% if chat.id == comment.object_id %}
                 <hr>
                 <div class="headimg-username">
-                    <h6><a href="/user_home/"><img width="38" height="38" class="js-img-show-head" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ comment.chats_user }}</a></h6>
+                    {% for head in headpoto %}
+                        {% if comment.chats_user == head.username %}
+                            <h6><a href="/user_home/"><img width="38" height="38" class="js-img-show-head" id="avatarShow" src="{{head.avatar.url}}"/>&nbsp;&nbsp;{{ comment.chats_user }}</a></h6>
+                        {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="comment-content">
                     <h6>{{ comment.content }}</h6>

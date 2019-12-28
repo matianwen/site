@@ -7,3 +7,6 @@ div.navbar-header {
     margin-left: 365px;
 }
 */
+div.panel-body ul li a {
+    text-decoration: none;
+}

@@ -55,5 +55,6 @@ def show_comments(request):
     learnchat_content_type = ContentType.objects.get_for_model(Send)
     comments = Comments.objects.filter(content_type=learnchat_content_type, object_id=Send.id)
     contexts['comments'] = comments
+    # contexts['comments_count'] = Comments.objects.filter(content_type=learnchat_content_type).count()
     # contexts['comments'] = Comments.objects.all()
     return render(request, 'login/newcomment.html', contexts)

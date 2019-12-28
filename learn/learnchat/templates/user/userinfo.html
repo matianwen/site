@@ -20,8 +20,10 @@
                             <li>用户名：{{request.session.user_name}}<a href="#"> 修改</a></li><hr/>
                             {% for info in userinfo %}
                                 {% if request.session.user_name == info.name %}
-                                    <li>性别：{{ info.get_sex_display }} 不可更改</li><hr/>
+                            <li>性别：{{ info.get_sex_display }} <font color=#8a9aa9>修改</font></li><hr/>
                                     <li>职位：教师<a href="#"> 修改</a><hr/></li>
+
+                                    <input type="text" style="display:none">
                                     <li>邮箱：
                                         {% if info.email %}
                                             {{ info.email }} <a href="#">修改</a>
