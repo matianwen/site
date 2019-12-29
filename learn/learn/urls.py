@@ -51,5 +51,6 @@ urlpatterns = [
     url(r'^resetpassword/', resetpassword),
     url(r'^useragreement/', useragreement),
     url(r'^privacyagreement/', privacyagreement),
+    path('notifications/', include('notifications.urls', namespace='notifications')),
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

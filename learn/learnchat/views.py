@@ -10,6 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from comments.models import Comments
 from .models import Updateheadpoto
 import time
+from notifications.signals import notify
 
 
 # 发布内容视图
@@ -65,6 +66,8 @@ def user_home(request):
 # 消息通知视图
 def noticeinfo(request):
     context = {}
+    # user = request.user
+    # context['notifies'] = user.notifications.all()
     return render(request, 'user/noticeinfo.html', context)
 
 

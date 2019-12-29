@@ -1,5 +1,5 @@
 '''
-项目所有表单类
+用户、注册表单类
 '''
 
 from django import forms

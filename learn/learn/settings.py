@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'learnchat',
     'comments',
     'findhistory',
+    'notifications',
 ]
 
 MIDDLEWARE = [

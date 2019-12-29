@@ -10,7 +10,13 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <h3>通知消息</h3>
-                        <h4>正在夜以继日开发中...</h4>
+                            <ul>
+                                {% for notification in request.user.notifications.all %}
+                                    <li>{{ notification }}</li>
+                                {% empty %}
+                                    <li>暂无消息</li>
+                                {% endfor %}
+                            </ul>
                     </div>
                 </div>
             </div>
