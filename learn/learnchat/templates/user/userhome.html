@@ -1,10 +1,10 @@
+
 <div style="background-color:#f4f5f5">
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block css %}<link href="{% static 'css/userhome.css' %}" rel="stylesheet"/>{% endblock %}
 {% block title %}言行{% endblock %}
 {% block content %}
-
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-7">
@@ -36,17 +36,17 @@
                 </div>
             </div>
             {% for mecontent in allcontent %}
-                <div class="col-xs-12 col-sm-8 col-md-7">
-                    <div class="panel panel-default">
-                        <div class="mycontent">
+                <div class="col-xs-12 col-sm-8 col-md-7" id="fusmdiv">
+                    <div class="panel panel-default" id="paneldiv">
+                        <div class="mycontent" id="mycontentdiv">
                             {% if request.session.user_name == mecontent.Temp %}
-                                <div class="username-home">
+                                <div class="username-home" id="userdiv">
                                     <h5>{{ mecontent.Temp }}</h5>
                                 </div>
-                                <div class="username-content">
+                                <div class="username-content" id="contentdiv">
                                     <h5>{{ mecontent.content }}</h5>
                                 </div>
-                                <div class="content-time">
+                                <div class="content-time" id="timediv">
                                     <h6>{{ mecontent.createTime | date:'Y-m-d H:i:s' }}</h6>
                                 </div>
                             {% endif %}

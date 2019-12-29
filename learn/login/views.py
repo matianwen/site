@@ -26,7 +26,7 @@ def index(request):
     learnchat_content_type = ContentType.objects.get_for_model(Send)
     comments = Comments.objects.filter(content_type=learnchat_content_type)
     contexts['comments'] = comments
-    contexts['comments_count'] = Comments.objects.filter(content_type=learnchat_content_type).count()
+    # contexts['comments_count'] = Comments.objects.filter(content_type=learnchat_content_type).count()
 
     # contexts['comments'] = Comments.objects.all()
 
