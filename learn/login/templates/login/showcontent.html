@@ -21,7 +21,9 @@
             <div class="panel-body">
                 {% for head in headpoto %}
                     {% if chat.Temp == head.username %}
-                        <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show-head" id="avatarShow" src="{{head.avatar.url}}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
+                        <div class="chatheadimage">
+                            <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show-head" id="avatarShow" src="{{head.avatar.url}}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
+                        </div>
                     {% endif %}
                 {% endfor %}
                 <!--

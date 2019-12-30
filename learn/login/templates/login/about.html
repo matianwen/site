@@ -1,15 +1,16 @@
-<div style="background-color:#f4f5f5">
-{% extends 'base.html' %}
+<div class="about-yanxing">
+
 {% load staticfiles %}
 {% block css %}<link href="{% static 'css/about.css' %}" rel="stylesheet"/>{% endblock %}
-{% block title %}言行{% endblock %}
+
 {% block content %}
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-10">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <p>言行-在这里你就是现代版诗人，说的话像诗一样美丽</p>
+                        <h1><a href="{% url 'index' %}">言行</a></h1>
+                        <h2>在这里你就是现代版诗人，说的话像诗一样美丽</h2>
                     </div>
                 </div>
             </div>

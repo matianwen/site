@@ -75,6 +75,10 @@ div.bottom span.style4 {
     font-size: 1.25rem;
     line-height: 1.6;
 }
+div.bottom span.style4 a {
+    text-decoration: none;
+    color: #909090
+}
 div.chat button btn btn-default {
     line-height: 0.5;
 }
@@ -96,6 +100,9 @@ div.headimg-username h6 a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
+}
+div.headimg-username {
+    margin-top: 20px;
 }
 textarea.form-control {
     resize:none;
@@ -121,6 +128,12 @@ div.btn-group a {
 img#avatarShow.js-img-show-head {
     margin-top: 7px;
     border-radius: 50%;
+}
+div.chatheadimage {
+    margin-top: -15px;
+}
+div.inforheadimage {
+    margin-top: -15px;
 }
 div.comment-forms {
     margin-top: 20px;

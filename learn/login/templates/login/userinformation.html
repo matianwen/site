@@ -8,7 +8,9 @@
 
                 {% for head in headpoto %}
                     {% if request.session.user_name == head.username %}
-                        <h4><li><a href="/user_home/"><img src="{{head.avatar.url}}" width="60" height="60" class="js-img-show-head" id="avatarShow">&nbsp;&nbsp;</a></li></h4>
+                        <div class="inforheadimage">
+                            <h4><li><a href="/user_home/"><img src="{{head.avatar.url}}" width="60" height="60" class="js-img-show-head" id="avatarShow">&nbsp;&nbsp;</a></li></h4>
+                        </div>
                     {% endif %}
                 {% endfor %}
 
