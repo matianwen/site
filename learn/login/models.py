@@ -1,9 +1,11 @@
 from django.db import models
 from django import forms
+#from django.contrib.auth.models import User #
 
 
 # 用户模型
 class User(models.Model):
+    # user = models.OneToOneField(User, on_delete=models.CASCADE) #
     gender = (
         ('男', '男'),
         ('女', '女'),
@@ -12,7 +14,7 @@ class User(models.Model):
     password = models.CharField('密码', max_length=256)
     email = models.EmailField('邮箱', unique=True)
     sex = models.CharField('性别', max_length=32, choices=gender, default='男')
-    time_now = models.DateTimeField(auto_now_add=True)
+    time_now = models.DateTimeField('注册时间', auto_now_add=True)
 
     def __str__(self):
         return self.name
