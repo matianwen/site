@@ -8,6 +8,8 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
+from notifications.signals import notify
+from django.utils.html import strip_tags
 
 
 # 评论视图
@@ -47,6 +49,18 @@ def commentviews(request):
         comment.content_object = model_obj
         # comment = Comments.objects.create(content_type=model_obj,object_id=object_id,content=content,pub_date=comment_time,chats_user=chats_user)
         comment.save()
+
+        # 发送站内消息
+        """
+        if content is None:
+            # 回复
+            pass
+        else:
+            # 评论
+            recipient = comment.content_object.get_user()
+
+        notify.send(chats_user, recipient=recipient, verb='You have a message', action_object=comment)
+        """
         return redirect(referer)
 
 

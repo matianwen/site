@@ -12,7 +12,7 @@
                         <h3>通知消息</h3>
                             <ul>
                                 {% for notification in request.user.notifications.all %}
-                                    <li>{{ notification }}</li>
+                                    <li>[{{ notification.timesince }}之前]，{{ notification.verb }}</li>
                                 {% empty %}
                                     <li>暂无消息</li>
                                 {% endfor %}

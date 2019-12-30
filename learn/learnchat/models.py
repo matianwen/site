@@ -32,6 +32,9 @@ class Send(models.Model):
     def __str__(self):
         return self.content
 
+    def get_user(self):
+        return self.Temp
+
     # 获取言行地址
     # def get_absolute_url(self):
         # return reverse('comments:commentviews', args=[self.id])

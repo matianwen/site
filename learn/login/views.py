@@ -150,3 +150,10 @@ def useragreement(request):
 def privacyagreement(request):
     contexts = {}
     return render(request, 'login/privacyagreement.html', contexts)
+
+
+# 关于视图
+def about(request):
+    contexts ={}
+    return render(request, 'login/about.html', contexts)
+

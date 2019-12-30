@@ -10,7 +10,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from comments.models import Comments
 from .models import Updateheadpoto
 import time
-from notifications.signals import notify
 
 
 # 发布内容视图
@@ -98,5 +97,6 @@ def updateheadphoto(request):
 def recommenddetails(request):
     context = {}
     context['recommendteta'] = Send.objects.filter(recommend=1)
+    context['recommendall'] = Send.objects.all()
     return render(request, 'user/recommenddetails.html', context)
 

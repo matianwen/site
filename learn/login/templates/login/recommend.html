@@ -6,9 +6,9 @@
         <div class="panel-heading"><b>热点推荐</b></div>
         <div class="panel-body">
             <ul style="list-style-type: none;">
-                {% for recom in recommendcontent %}
+                {% for recommd in recommendcontent %}
                     <div class="recom">
-                        <p><li><a href="/recommenddetails/" target="_blank">{{ recom.content }}</a></li></p>
+                        <p><li><a href="/recommenddetails/" target="_blank">{{ recommd.content }}</a></li></p>
                     </div>
                 {% endfor %}
             </ul>

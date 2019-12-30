@@ -27,6 +27,7 @@ from learnchat.views import recommenddetails
 from login.views import resetpassword
 from login.views import useragreement
 from login.views import privacyagreement
+from login.views import about
 
 
 urlpatterns = [
@@ -52,5 +53,6 @@ urlpatterns = [
     url(r'^useragreement/', useragreement),
     url(r'^privacyagreement/', privacyagreement),
     path('notifications/', include('notifications.urls', namespace='notifications')),
+    url(r'^about/', about),
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
