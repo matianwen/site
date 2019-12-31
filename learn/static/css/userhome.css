@@ -8,8 +8,12 @@ div.navbar-header {
 }
 */
 div.myname h3 {
-    margin-left: 10px;
+    margin-left: 20px;
     font-weight: bold;
+}
+div.introduce h5 {
+    margin-left: -70px;
+    margin-top: 60px;
 }
 div.updateinfo a {
     margin-left: 600px;

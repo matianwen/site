@@ -1,9 +1,10 @@
-<div style="background-color:#f4f5f5" xmlns="http://www.w3.org/1999/html">
+<div class="fund-page">
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block css %}<link href="{% static 'css/fund.css' %}" rel="stylesheet"/>{% endblock %}
+
 {% block title %}言行{% endblock %}
 {% block content %}
+    {% block css %}<link href="{% static 'css/fund.css' %}" rel="stylesheet"/>{% endblock %}
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-10">

@@ -1,11 +1,10 @@
 from django.db import models
 from django import forms
-#from django.contrib.auth.models import User #
+#from django.contrib.auth.models import User
 
 
 # 用户模型
 class User(models.Model):
-    # user = models.OneToOneField(User, on_delete=models.CASCADE) #
     gender = (
         ('男', '男'),
         ('女', '女'),
@@ -25,3 +24,13 @@ class User(models.Model):
         verbose_name_plural = '用户'  # 如果此项没有设置，Django 会使用 verbose_name + "s"来表示
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='用户名')
+    introduce = models.CharField(max_length=50, verbose_name='简介')
+
+    def __str__(self):
+        return '<Profile: %s for %s>' % (self.introduce, self.user.username)
+
+    class Meta:
+        verbose_name = '用户简介'
+        verbose_name_plural = '用户简介'
