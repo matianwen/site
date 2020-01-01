@@ -7,5 +7,5 @@ class SendAdmin(admin.ModelAdmin):
     list_display = ('content', 'Temp', 'createTime', 'see', 'recommend')
 
 admin.site.register(Tags)
-admin.site.register(Information)
+# admin.site.register(Information)
 admin.site.register(Updateheadpoto)

@@ -7,7 +7,7 @@ from . models import User
 from . import models
 from . forms import UserForm, RegisterForm
 from learnchat.models import Send
-from learnchat.models import Information
+# from learnchat.models import Information
 from django.db.models.aggregates import Count
 from comments.models import Comments
 from learnchat.models import Updateheadpoto
@@ -156,4 +156,5 @@ def privacyagreement(request):
 def about(request):
     contexts ={}
     return render(request, 'login/about.html', contexts)
+
 

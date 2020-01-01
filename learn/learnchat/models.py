@@ -44,6 +44,7 @@ class Send(models.Model):
         verbose_name_plural = '发布内容'
 
 
+"""
 # 用户信息模型
 class Information(models.Model):
     user_name = models.ForeignKey('login.User', on_delete=models.CASCADE)
@@ -57,6 +58,7 @@ class Information(models.Model):
     class Meta:
         verbose_name = '用户信息'
         verbose_name_plural = '用户信息'
+"""
 
 
 # 用户更新头像模型
