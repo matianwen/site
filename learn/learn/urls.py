@@ -54,5 +54,6 @@ urlpatterns = [
     url(r'^privacyagreement/', privacyagreement),
     path('notifications/', include('notifications.urls', namespace='notifications')),
     url(r'^about/', about),
+    path('likes/', include('likes.urls')),
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

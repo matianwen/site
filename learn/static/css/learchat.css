@@ -171,8 +171,23 @@ div.username-info h4 li a {
     margin: 0 auto;
     margin-left: 8px;
 }
-
-
+div.glyphicon glyphicon-thumbs-up .active {
+    color: #f22;
+}
+span.glyphicon.glyphicon-thumbs-up {
+    color: #8a9aa9;
+    cursor: pointer;
+}
+span.glyphicon.glyphicon-thumbs-up.active{
+    color: #f22;
+}
+span.likes {
+    color: #8a9aa9;
+    cursor: pointer;
+}
+span.liked-num {
+    color: #8a9aa9;
+}
 
 /*
 .btt .backtotop {

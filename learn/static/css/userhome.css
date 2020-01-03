@@ -12,8 +12,9 @@ div.myname h3 {
     font-weight: bold;
 }
 div.introduce h5 {
-    margin-left: -65px;
+    margin-left: -70px;
     margin-top: 60px;
+    color: #72777b;
 }
 div.updateinfo a {
     margin-left: 600px;

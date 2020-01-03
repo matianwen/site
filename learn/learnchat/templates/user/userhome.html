@@ -1,3 +1,10 @@
+<script type="text/javascript">
+       var chatpage=document.getElementById("#fusmdiv");
+       if(chatpage.innerHTML=='')
+       {
+            chatpage.style.display='none';
+       }
+</script>
 
 <div style="background-color:#f4f5f5">
 {% extends 'base.html' %}
@@ -22,9 +29,11 @@
                                 <h3>{{ request.session.user_name }}</h3>
                             </div>
                             <div class="introduce" style="display:inline;float:left;">
-                                {% for introd in userintroduce %}
-                                    <h5><span class="glyphicon glyphicon-education"></span> {{ introd }}</h5>
-                                {% endfor %}
+                                <h5><span class="glyphicon glyphicon-briefcase"></span>
+                                    {% for introd in userintroduce %}
+                                        {{ introd }}
+                                    {% endfor %}
+                                </h5>
                             </div>
                             <div class="updateinfo" style="display:inline;float:right;">
                                 <a href="/user_info/"><button type="button" class="btn btn-primary">编辑个人资料</button></a>

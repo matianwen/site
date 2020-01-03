@@ -1,18 +1,64 @@
 <!-- 显示所有用户发表信息 用户、发布内容、发布时间 -->
 {% load staticfiles %}
 {% load commenttags %}
+{% load likes_tags %}
 {% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
 
 <!-- js点击显示/隐藏评论框-->
 <script type="text/javascript">
     $(document).ready(function(){
-      $(".reply_btn").click(function(){
-        $(".form-group").toggle(500);
-        $(".form-comment").toggle(500);
-        $(".login-comment").toggle();
-      });
+        $(".reply_btn").click(function(){
+            $(".form-group").toggle(500);
+            $(".form-comment").toggle(500);
+            $(".login-comment").toggle();
+        });
     });
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("like_btn").click(function(){
+            addlikes(this);
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    function likechange(obj, content_type, object_id){
+        var is_like = obj.getElementsByClassName('active').length == 0
+        $.ajax({
+            url: "{% url 'like_change' %}",
+            type: 'GET',
+            data: {
+                content_type: content_type,
+                object_id: object_id,
+                is_like: is_like
+            },
+            cache: false,
+            success: function(data){
+                console.log(data)
+                if(data['status']=='SUCCESS'){
+                    var element = $(obj.getElementsByClassName('glyphicon'));
+                    if(is_like){
+                        element.addClass('active');
+                    }else{
+                        element.removeClass('active');
+                    }
+                    var liked_num = $(obj.getElementsByClassName('liked-num'));
+                    liked_num.tex(data['liked_num']);
+                }else{
+                    alert(data['message']);
+                }
+            },
+            error: function(xhr){
+                console.log(xhr)
+            }
+        });
+    }
+</script>
+
+
 
 <!-- 显示用户、发布内容、发布时间 -->
 {% for chat in learnchats %}
@@ -38,9 +84,15 @@
                 <br/>
                 <hr/>
                 <div class="btn-group btn-group-justified" role="group">
+                    <!--
                     <div class="btn-group" role="group">
-                        <a href="javascript:;" class="like_btn"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>点赞</a>
+                        <a href="javascript:;" class="like_btn"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>点赞({% get_comment_count chat %})</a>
                     </div>
+                    -->
+                    <div class="btn-group" role="group" onclick="likechange(this, 'Send', {{ chat.id }})">
+                       <span class="glyphicon glyphicon-thumbs-up {% get_like_status chat %}" aria-hidden="true"></span><span class="likes">点赞</span><span class="liked-num">({% get_like_count chat %})</span>
+                    </div>
+
                     <div class="btn-group" role="group">
                         <a href="javascript:;" class="reply_btn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>评论({% get_comment_count chat %})</a>
                     </div>

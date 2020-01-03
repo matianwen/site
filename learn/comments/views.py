@@ -10,6 +10,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
 from notifications.signals import notify
 from django.utils.html import strip_tags
+from likes.models import *
 
 
 # 评论视图
@@ -69,6 +70,9 @@ def show_comments(request):
     learnchat_content_type = ContentType.objects.get_for_model(Send)
     comments = Comments.objects.filter(content_type=learnchat_content_type, object_id=Send.id)
     contexts['comments'] = comments
+
+    likescount = Likecount.objects.filter(content_type=learnchat_content_type, object_id=Send.id)
+    contexts['likescount'] = likescount
     # contexts['comments_count'] = Comments.objects.filter(content_type=learnchat_content_type).count()
     # contexts['comments'] = Comments.objects.all()
     return render(request, 'login/newcomment.html', contexts)
