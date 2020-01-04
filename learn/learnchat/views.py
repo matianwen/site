@@ -101,5 +101,6 @@ def recommenddetails(request):
     context = {}
     context['recommendteta'] = Send.objects.filter(recommend=1)
     context['recommendall'] = Send.objects.all()
+    context['headpoto'] = Updateheadpoto.objects.all()
     return render(request, 'user/recommenddetails.html', context)
 

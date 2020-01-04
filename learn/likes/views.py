@@ -1,3 +1,8 @@
+"""
+author: matianwen
+date: 2020-01-04
+info: 点赞功能相关视图
+"""
 from django.shortcuts import render
 from django.contrib.contenttypes.models import ContentType
 from .models import Likecount, Likerecord
@@ -22,7 +27,7 @@ def SuccessResponse(liked_num):
 
 def like_change(request):
     if not request.session.get('is_login', None):
-        return ErrorResponse(400, '你还没有登录')
+        return ErrorResponse(400, '你还没有登录!')
 
     # 获取数据
     user = request.session.get('user_name')
@@ -34,7 +39,7 @@ def like_change(request):
         model_class = content_type.model_class()
         model_obj = model_class.objects.get(pk=object_id)
     except ObjectDoesNotExist:
-        return ErrorResponse(401, '对象不存在')
+        return ErrorResponse(401, '对象不存在!')
 
     if request.GET.get('is_like') == 'true':
         # 点赞
@@ -47,7 +52,7 @@ def like_change(request):
             return SuccessResponse(like_count.liked_num)
         else:
             # 已点过，不可重复
-            return ErrorResponse(402, '你已经点赞过')
+            return ErrorResponse(402, '你已经点赞过!')
     else:
         # 取消点赞
         if Likerecord.objects.filter(content_type=content_type, object_id=object_id, user=user).exists():
@@ -61,6 +66,6 @@ def like_change(request):
                 like_count.save()
                 return SuccessResponse(like_count.liked_num)
             else:
-                return ErrorResponse(404, '数据错误')
+                return ErrorResponse(404, '数据错误!')
         else:
-            return ErrorResponse(403, '你没有点赞过，不能取消点赞')
+            return ErrorResponse(403, '你没有点赞过，不能取消点赞!')

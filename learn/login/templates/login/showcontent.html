@@ -16,15 +16,6 @@
 </script>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $("like_btn").click(function(){
-            addlikes(this);
-        });
-    });
-</script>
-
-
-<script type="text/javascript">
     function likechange(obj, content_type, object_id){
         var is_like = obj.getElementsByClassName('active').length == 0
         $.ajax({
@@ -46,7 +37,7 @@
                         element.removeClass('active');
                     }
                     var liked_num = $(obj.getElementsByClassName('liked-num'));
-                    liked_num.tex(data['liked_num']);
+                    liked_num.text(data['liked_num']);
                 }else{
                     alert(data['message']);
                 }
@@ -57,8 +48,6 @@
         });
     }
 </script>
-
-
 
 <!-- 显示用户、发布内容、发布时间 -->
 {% for chat in learnchats %}
@@ -92,7 +81,6 @@
                     <div class="btn-group" role="group" onclick="likechange(this, 'Send', {{ chat.id }})">
                        <span class="glyphicon glyphicon-thumbs-up {% get_like_status chat %}" aria-hidden="true"></span><span class="likes">点赞</span><span class="liked-num">({% get_like_count chat %})</span>
                     </div>
-
                     <div class="btn-group" role="group">
                         <a href="javascript:;" class="reply_btn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>评论({% get_comment_count chat %})</a>
                     </div>

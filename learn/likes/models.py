@@ -1,3 +1,8 @@
+"""
+author: matianwen
+date: 2020-01-03
+info: 点赞功能相关模型
+"""
 from django.db import models
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
