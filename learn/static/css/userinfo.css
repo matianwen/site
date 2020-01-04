@@ -10,3 +10,20 @@ div.navbar-header {
 div.panel-body ul li a {
     text-decoration: none;
 }
+div.content-group {
+    margin-left: 55px;
+    margin-top: -10px;
+}
+div.content-group h5 {
+    font-size: 15px;
+}
+div.createtime-group {
+    margin-left: 55px;
+}
+img#avatarShow.js-img-show-head {
+    border-radius: 50%;
+}
+div.headpoto-group h5 {
+    font-size: 18px;
+    font-weight: bold;
+}

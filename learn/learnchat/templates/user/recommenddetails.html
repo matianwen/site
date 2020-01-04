@@ -19,11 +19,17 @@
                             <div class="panel-body">
                                 {% for headimg in headpoto %}
                                     {% if recommend.Temp == headimg.username %}
-                                        <h4><img width="48" height="48" class="js-img-show-head" id="avatarShow" src="{{headimg.avatar.url}}"/>&nbsp;&nbsp;{{ recommend.Temp }}</h4>
+                                        <div class="headpoto-group">
+                                            <h5><img width="48" height="48" class="js-img-show-head" id="avatarShow" src="{{headimg.avatar.url}}"/>&nbsp;&nbsp;{{ recommend.Temp }}</h5>
+                                        </div>
                                     {% endif %}
                                 {% endfor %}
-                                <h4>{{ recommend.content }}</h4>
-                                <h5>{{ recommend.createTime | date:'Y-m-d H:i:s'}}</h5>
+                                <div class="content-group">
+                                    <h5>{{ recommend.content }}</h5>
+                                </div>
+                                <div class="createtime-group">
+                                    <h6>{{ recommend.createTime | date:'Y-m-d H:i:s'}}</h6>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -53,6 +53,13 @@
                 <div class="col-xs-12 col-sm-8 col-md-7" id="fusmdiv">
                     <div class="panel panel-default" id="paneldiv">
                         <div class="mycontent" id="mycontentdiv">
+                            <!--
+                            {% for headpoto in headimge %}
+                                {% if request.session.user_name == headpoto.username %}
+                                    <h5><img width="48" height="48" class="js-img-show-head" id="avatarShow" src="{{headpoto.avatar.url}}"/>
+                                {% endif %}
+                            {% endfor %}
+                            -->
                             {% if request.session.user_name == mecontent.Temp %}
                                 <div class="username-home" id="userdiv">
                                     <h5>{{ mecontent.Temp }}</h5>
