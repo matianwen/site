@@ -28,9 +28,12 @@ div.content-dynamic {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+div.username-home {
+    margin-left: 20px;
+}
 div.username-home h5 {
     font-weight: bold;
-    margin-left: 40px;
+    /*margin-left: 40px;*/
     font-size: 18px;
 }
 div.username-content {
@@ -38,13 +41,19 @@ div.username-content {
     margin-top: 20px;
 }
 div.username-content h5 {
-    margin-left: 30px;
+    margin-left: 68px;
     font-size: 15px;
 }
 div.content-time h6 {
-    margin-left: 30px;
+    margin-left: 68px;
 }
 div.content-time {
     margin-left: 10px;
     margin-top: 20px;
+}
+img#avatarShow.js-img-show-head {
+    border-radius: 50%;
+}
+div.username-content {
+    margin-top: -10px;
 }
