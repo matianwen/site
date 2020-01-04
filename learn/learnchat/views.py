@@ -114,8 +114,10 @@ def searchall(request):
 
     referer = request.META.get('HTTP_REFERER', reverse('index'))
     if not get_input:
-        message = '请输入搜索关键字'
-        return render(request, 'error.html', {'message': message , 'redirect_to': referer})
+        error_message = '请输入搜索关键字'
+        return render(request, 'error.html', {'message': error_message , 'redirect_to': referer})
 
-    context['returnsearch'] = Send.objects.filter(content=get_input)
+    # context['alldata'] = Send.objects.all().values("Temp","content")  #  获取所有的Temp,content数据，返回QuerySet，里面包含的是字典
+    context['returnsearch'] = Send.objects.filter(content__icontains=get_input)  # exclude(body_text__icontains=get_input)
+    context['userall'] = Send.objects.filter(Temp__icontains=get_input)
     return render(request, 'user/searchall.html', context)

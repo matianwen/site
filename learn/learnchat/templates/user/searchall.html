@@ -1,7 +1,7 @@
 <div class="search-page">
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block css %}<link href="{% static 'css/search.css' %}" rel="stylesheet"/>{% endblock %}
+{# {% block css %}<link href="{% static 'css/search.css' %}" rel="stylesheet"/>{% endblock %} #}
 {% block title %}言行{% endblock %}
 {% block content %}
     <div class="container">
@@ -12,7 +12,11 @@
                         {% for search in returnsearch %}
                             {{ search }}
                         {% empty %}
-                            <h2>没有搜索到符合条件信息...</h2>
+                            <h2>没有检索到符合条件信息...</h2>
+                        {% endfor %}
+
+                        {% for user in userall %}
+                            {{ user }}
                         {% endfor %}
                     </div>
                 </div>
