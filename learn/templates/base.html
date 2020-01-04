@@ -48,12 +48,13 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <div class="navbar-form navbar-left">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
+                                <form class="input-group" method="get" action="/searchall/">
+                                    {% csrf_token %}
+                                    <input type="text" class="form-control" name="get_input" placeholder="搜索...">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button" style="background-color:#007fff">探索</button>
+                                        <button class="btn btn-primary" type="submit" style="background-color:#007fff">探索</button>
                                     </span>
-                                </div>
+                                </form>
                             </div>
                             {% if request.session.is_login %}
                                 <li><a href="/noticeinfo/"><img src="/static/images/messageIcon.png"></a></li>

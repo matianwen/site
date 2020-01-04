@@ -104,3 +104,18 @@ def recommenddetails(request):
     context['headpoto'] = Updateheadpoto.objects.all()
     return render(request, 'user/recommenddetails.html', context)
 
+
+# 站内搜索视图
+def searchall(request):
+    context = {}
+    get_input = request.GET.get('get_input')
+    print('获取搜索关键字：', get_input)
+    message = ''
+
+    referer = request.META.get('HTTP_REFERER', reverse('index'))
+    if not get_input:
+        message = '请输入搜索关键字'
+        return render(request, 'error.html', {'message': message , 'redirect_to': referer})
+
+    context['returnsearch'] = Send.objects.filter(content=get_input)
+    return render(request, 'user/searchall.html', context)
