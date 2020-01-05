@@ -118,6 +118,10 @@ def searchall(request):
         return render(request, 'error.html', {'message': error_message , 'redirect_to': referer})
 
     # context['alldata'] = Send.objects.all().values("Temp","content")  #  获取所有的Temp,content数据，返回QuerySet，里面包含的是字典
-    context['returnsearch'] = Send.objects.filter(content__icontains=get_input)  # exclude(body_text__icontains=get_input)
-    context['userall'] = Send.objects.filter(Temp__icontains=get_input)
+    searchcontent = Send.objects.filter(content__icontains=get_input)  # exclude(body_text__icontains=get_input)
+    searchatemp = Send.objects.filter(Temp__icontains=get_input)
+    searchtime = Send.objects.filter(createTime__icontains=get_input)
+    context['returnsearch'] = (searchcontent|searchatemp|searchtime).distinct()
+    # context['userall'] = Send.objects.filter(Temp__icontains=get_input)
+
     return render(request, 'user/searchall.html', context)

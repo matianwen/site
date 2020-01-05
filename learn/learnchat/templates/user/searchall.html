@@ -10,14 +10,17 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         {% for search in returnsearch %}
+                            <hr/>
                             {{ search }}
                         {% empty %}
                             <h2>没有检索到符合条件信息...</h2>
                         {% endfor %}
-
+                        <!--
                         {% for user in userall %}
+                            <hr/>
                             {{ user }}
                         {% endfor %}
+                        -->
                     </div>
                 </div>
             </div>

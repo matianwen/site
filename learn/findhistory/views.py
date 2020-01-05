@@ -3,13 +3,13 @@ from .models import Findnearhistory
 
 
 # 导航栏发现视图
-def fund(request):
+def find(request):
     context = {}
     context['findhistory'] = Findnearhistory.objects.all().order_by("-timenow")
-    return render(request, 'find/fund.html', context)
+    return render(request, 'find/find.html', context)
 
 
 # 挖掘显示视图
-def fundsecondpage(request):
+def findsecondpage(request):
     context ={}
-    return render(request, 'find/fundsecondpage.html', context)
+    return render(request, 'find/findsecondpage.html', context)

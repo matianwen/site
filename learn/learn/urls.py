@@ -14,7 +14,7 @@ from learnchat.views import send_content
 import comments
 from learnchat.views import user_info
 from learnchat.views import user_home
-from findhistory.views import fund
+from findhistory.views import find
 from learnchat.views import noticeinfo
 from learnchat.views import blackhole
 from learnchat.views import updateheadphoto
@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
 from django.views.generic.base import RedirectView
-from findhistory.views import fundsecondpage
+from findhistory.views import findsecondpage
 from learnchat.views import recommenddetails
 from login.views import resetpassword
 from login.views import useragreement
@@ -38,7 +38,7 @@ urlpatterns = [
     url(r'^register/', views.register),
     url(r'^logout/', views.logout),
     url(r'^captcha', include('captcha.urls')),
-    url(r'^fund/', fund),
+    url(r'^find/', find),
     url(r'^send_content', send_content),
     path('', include('comments.urls')),
     url(r'^user_info/', user_info),
@@ -48,7 +48,7 @@ urlpatterns = [
     url(r'^updateheadphoto/', updateheadphoto),
     re_path(r'^media/(.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
     url(r'^favicon.ico$',RedirectView.as_view(url=r'static/images/favicon.ico')),
-    # url(r'^fundsecondpage/', fundsecondpage),
+    # url(r'^findsecondpage/', findsecondpage),
     url(r'^recommenddetails/', recommenddetails),
     url(r'^resetpassword/', resetpassword),
     url(r'^useragreement/', useragreement),
