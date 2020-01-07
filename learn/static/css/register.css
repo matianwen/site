@@ -40,3 +40,6 @@ div.data-agreement {
 div.data-agreement a {
     text-decoration: none;
 }
+div.form-group {
+    margin-bottom: 10px;
+}

@@ -14,6 +14,7 @@ from learnchat.models import Updateheadpoto
 import time
 from django.contrib.contenttypes.models import ContentType
 from comments.forms import CommentForm
+from likes.models import Likecount
 
 
 # 主页视图
@@ -42,6 +43,8 @@ def index(request):
     #contexts['comment_form'] = comment_form
 
     contexts['headpoto'] = Updateheadpoto.objects.all()   #  filter(username=request.session.get('is_login'))
+    contexts['likecount'] = Likecount.objects.all().count()
+    # contexts['likedall'] = Likecount.objects.filter(object_id=request.session.get('object_id'))
     return render(request, 'login/index.html', contexts)
 
 

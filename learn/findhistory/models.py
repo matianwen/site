@@ -7,7 +7,7 @@ class Findnearhistory(models.Model):
         ('男', '男'),
         ('女', '女'),
     )
-    username = models.CharField('作者', max_length=16)
+    username = models.CharField('作者', max_length=16, default='admin')
     sex = models.CharField('性别', max_length=32, choices=gender, default='男')
     placename = models.CharField('地名', max_length=20)
     history = models.TextField('历史', null=True)

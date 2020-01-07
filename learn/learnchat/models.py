@@ -28,6 +28,7 @@ class Send(models.Model):
     # tags = models.ManyToManyField(Tags, verbose_name='标签')
     see = models.IntegerField('浏览数', default=0)
     recommend = models.BooleanField('推荐言行', default=False)
+    headphoto = models.FileField(upload_to="headimages/%Y/%m/%d/", default=u"headimages/default.png", max_length=100, verbose_name="头像")
 
     def __str__(self):
         return self.content

@@ -24,7 +24,11 @@
                 <div class="usersend-information">
                     <h4><li>诗句：<a href="/user_home/">{{ userlearnnum|length }}</a></li></h4>
                     <h4><li>诗友：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
-                    <h4><li>获赞：<a href="{% url 'index' %}">{{ learnchats.user_name|length }}</a></li></h4>
+
+                    <h4><li>获赞：<a href="{% url 'index' %}">
+                        {{likecount}}
+                    </a></li></h4>
+
                 </div>
             </ul>
         </div>

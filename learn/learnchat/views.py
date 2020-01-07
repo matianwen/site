@@ -51,6 +51,7 @@ def user_info(request):
     context['headimge'] = Updateheadpoto.objects.all()
     context['introduceuser'] = Profile.objects.filter(user_id=request.session.get('user_id'))
     # context['usersex'] = User.objects.filter(sex=request.session.get('get_sex_display '))
+    # context['loginip'] = request.META['HTTP_X_FORWARDED_FOR']
     return render(request, 'user/userinfo.html', context)
 
 
@@ -125,3 +126,5 @@ def searchall(request):
     # context['userall'] = Send.objects.filter(Temp__icontains=get_input)
 
     return render(request, 'user/searchall.html', context)
+
+

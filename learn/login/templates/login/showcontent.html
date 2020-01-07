@@ -49,7 +49,16 @@
     }
 </script>
 
+
+<!--{% if head.username != chat.Temp %}
+    {% if head.avatar != chat.headphoto %}
+        <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
+    {% endif %}
+{% endif %}-->
+
+
 <!-- 显示用户、发布内容、发布时间 -->
+
 {% for chat in learnchats %}
     <div class="chat">
         <div class="panel panel-default">
@@ -61,11 +70,11 @@
                         </div>
                     {% endif %}
                 {% endfor %}
+
                 <!--
-                {% if request.session.user_name != head.username %}
-                        <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
-                {% endif %}
+                <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
                 -->
+
                 <div class="content-time">
                     <h6>{{ chat.createTime | date:'Y-m-d H:i:s' }}</h6> <!--  <font color=#8a9aa9>来自</font>-->
                 </div>

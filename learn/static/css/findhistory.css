@@ -1,12 +1,31 @@
-.photo{
+.photo-group{
     float: left;
     width: 20%;
 }
-.intro{
+.history-group{
     float: right;
     width: 75%;
 }
-div.intro a {
+div.history-group a {
     color: #17181a;
     text-decoration: none;
+    font-weight: bold;
+    line-height: 25px;
+}
+div.username-group {
+    margin-top: 100px;
+    margin-left: 220px;
+}
+div.username-group a {
+    color: #8a9aa9;
+    text-decoration: none;
+    font-weight: bold;
+}
+div.timenow-group {
+    margin-left: 300px;
+    margin-top: -22px;
+    color: #8a9aa9;
+}
+div.timenow-group h6 {
+    font-weight: bold;
 }
