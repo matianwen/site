@@ -4,6 +4,47 @@
 {% load likes_tags %}
 {% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
 
+
+
+<script type="text/javascript">
+    var index = 0;
+    function lowEnough(){
+        var pageHeight = Math.max(document.body.scrollHeight,document.body.offsetHeight);
+        var viewportHeight = window.innerHeight ||
+            document.documentElement.clientHeight ||
+            document.body.clientHeight || 0;
+        var scrollHeight = window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop || 0;
+        return pageHeight - viewportHeight - scrollHeight < 20;
+    }
+
+    function doSomething(){
+        var htmlStr = "";
+        for(var i=0;i<10;i++){
+            htmlStr += "这是第"+index+"次加载<br>";
+        }
+        $('#sample').append(htmlStr);
+        index++;
+        pollScroll();//继续循环
+        $('#spinner').hide();
+    }
+
+    function checkScroll(){
+        if(!lowEnough()) return pollScroll();
+        $('#spinner').show();
+        setTimeout(doSomething,900);
+    }
+    function pollScroll(){
+        setTimeout(checkScroll,1000);
+    }
+    checkScroll();
+</script>
+
+
+
+
+
 <!-- js点击显示/隐藏评论框-->
 <script type="text/javascript">
     $(document).ready(function(){
@@ -55,18 +96,15 @@
         <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
     {% endif %}
 {% endif %}-->
-
-
 <!-- 显示用户、发布内容、发布时间 -->
-
 {% for chat in learnchats %}
-    <div class="chat">
+    <div class="chat" id="spinner">
         <div class="panel panel-default">
             <div class="panel-body">
                 {% for head in headpoto %}
                     {% if chat.Temp == head.username %}
                         <div class="chatheadimage">
-                            <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show-head" id="avatarShow" src="{{head.avatar.url}}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
+                            <h4><a href="{% url 'user_home' %}"><img width="48" height="48" class="js-img-show-head" id="avatarShow" src="{{head.avatar.url}}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
                         </div>
                     {% endif %}
                 {% endfor %}

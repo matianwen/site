@@ -6,7 +6,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="photo-group"><a href="#"><img width="200" height="120" class="js-img-show" id="avatarShow" src="{{nearhistory.photo.url}}"></a></div>
-                <div class="history-group"><h4><a href="#">{{ nearhistory.history }}</a></h4></div>
+                <div class="history-group"><h4><a href="{% url 'findnearhistory' %}" target="_blank">{{ nearhistory.history }}</a></h4></div>
                 <div class="username-group"><h5><a href="#">{{ nearhistory.username }}</a></h5></div>
                 <div class="timenow-group"><h6>{{ nearhistory.timenow }}</h6></div>
             </div>

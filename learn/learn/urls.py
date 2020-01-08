@@ -29,6 +29,7 @@ from login.views import useragreement
 from login.views import privacyagreement
 from login.views import about
 from learnchat.views import searchall
+from findhistory.views import findnearhistory
 
 
 urlpatterns = [
@@ -42,7 +43,7 @@ urlpatterns = [
     url(r'^send_content', send_content),
     path('', include('comments.urls')),
     url(r'^user_info/', user_info),
-    url(r'^user_home/', user_home),
+    url(r'^user_home/', user_home, name='user_home'),
     url(r'^noticeinfo/', noticeinfo),
     url(r'^blackhole/', blackhole),
     url(r'^updateheadphoto/', updateheadphoto),
@@ -57,5 +58,6 @@ urlpatterns = [
     url(r'^about/', about),
     path('likes/', include('likes.urls')),
     url(r'^searchall/', searchall),
+    url(r'^findnearhistory/', findnearhistory, name='findnearhistory'),
 ]
 # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

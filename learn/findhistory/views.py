@@ -13,3 +13,9 @@ def find(request):
 def findsecondpage(request):
     context ={}
     return render(request, 'find/findsecondpage.html', context)
+
+
+# 附近历史详情
+def findnearhistory(request):
+    context = {}
+    return render(request, 'find/findnearhistory.html', context)
