@@ -43,8 +43,6 @@
 
 
 
-
-
 <!-- js点击显示/隐藏评论框-->
 <script type="text/javascript">
     $(document).ready(function(){
@@ -142,4 +140,36 @@
     </div>
 {% endfor %}
 
-
+<div class="chat-page">
+    <ul class="pagination">
+        <li>
+            {% if learnchats.has_previous %}
+                <a href="?page={{ learnchats.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            {% else %}
+                <span aria-hidden="true">&laquo;</span>
+            {% endif %}
+        </li>
+        {% for page_num in page_range %}
+            {% if page_num == learnchats.number %}
+                <li class="active"><span>{{ page_num }}</span></li>
+            {% else %}
+                {% if page_num == '...' %}
+                    <li><span>{{ page_num }}</span></li>
+                {% else %}
+                    <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        <li>
+            {% if learnchats.has_next %}
+                <a href="?page={{ learnchats.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            {% else %}
+                <span aria-hidden="true">&raquo;</span>
+            {% endif %}
+        </li>
+    </ul>
+</div>

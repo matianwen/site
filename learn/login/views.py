@@ -15,27 +15,49 @@ import time
 from django.contrib.contenttypes.models import ContentType
 from comments.forms import CommentForm
 from likes.models import Likecount
+from django.core.paginator import Paginator
 
 
 # 主页视图
 def index(request):
     contexts = {}
-    contexts['learnchats'] = Send.objects.all().order_by("-createTime")  # 显示所有发布内容视图
+    # contexts['learnchats'] = Send.objects.all().order_by("-createTime")  # 显示所有发布内容视图
+
+    chat_all_list = Send.objects.all().order_by("-createTime")
+    paginator = Paginator(chat_all_list, 10)
+    page_num = request.GET.get('page', 1)
+    page_of_chat = paginator.get_page(page_num)
+    currentr_page_num = page_of_chat.number # 获取当前页码
+    # 获取当前页码前后各2页的页码范围
+    page_range = list(range(max(currentr_page_num - 2, 1), currentr_page_num)) + list(range(currentr_page_num, min(currentr_page_num + 2, paginator.num_pages) + 1))
+
+    # 加上省略页码标记
+    if page_range[0] -1 >= 2:
+        page_range.insert(0, '...')
+    if paginator.num_pages - page_range[-1] >= 2:
+        page_range.append('...')
+    # 加上首页和尾页
+    if page_range[0] != 1:
+        page_range.insert(0, 1)
+    if page_range[-1] != paginator.num_pages:
+        page_range.append(paginator.num_pages)
+
+    contexts['learnchats'] = page_of_chat
+    contexts['page_range'] = page_range
+
     contexts['recommendcontent'] = Send.objects.filter(recommend=1)  # 热点推荐视图
     contexts['userlearnnum'] = Send.objects.filter(Temp=request.session.get('user_name'))
 
     learnchat_content_type = ContentType.objects.get_for_model(Send)
     comments = Comments.objects.filter(content_type=learnchat_content_type)
     contexts['comments'] = comments
+
     # contexts['comments_count'] = Comments.objects.filter(content_type=learnchat_content_type).count()
-
     # contexts['comments'] = Comments.objects.all()
-
     #data = {}
     #data['content_type'] = learnchat_content_type.model
     #data['object_id'] = Send.objects.filter()
     #contexts['comment_form'] = CommentForm(initial=data)
-
     #comment_form = CommentForm(request.POST)
     #if comment_form.is_valid():
        # content_type = comment_form.cleaned_data['content_type']

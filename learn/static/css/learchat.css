@@ -189,7 +189,10 @@ span.likes {
 span.liked-num {
     color: #8a9aa9;
 }
-
+div.chat-page {
+    margin-top: -20px;
+    text-align: center;
+}
 
 
 
