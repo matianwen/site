@@ -13,4 +13,3 @@ admin.site.register(Tags)
 @admin.register(Updateheadpoto)
 class UpdateheadpotoAdmin(admin.ModelAdmin):
     list_display = ('username', 'avatar')
-    
