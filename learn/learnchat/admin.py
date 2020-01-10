@@ -8,4 +8,9 @@ class SendAdmin(admin.ModelAdmin):
 
 admin.site.register(Tags)
 # admin.site.register(Information)
-admin.site.register(Updateheadpoto)
+# admin.site.register(Updateheadpoto)
+
+@admin.register(Updateheadpoto)
+class UpdateheadpotoAdmin(admin.ModelAdmin):
+    list_display = ('username', 'avatar')
+    

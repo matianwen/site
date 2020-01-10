@@ -106,11 +106,9 @@
                         </div>
                     {% endif %}
                 {% endfor %}
-
                 <!--
                 <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
                 -->
-
                 <div class="content-time">
                     <h6>{{ chat.createTime | date:'Y-m-d H:i:s' }}</h6> <!--  <font color=#8a9aa9>来自</font>-->
                 </div>
@@ -139,7 +137,7 @@
         </div>
     </div>
 {% endfor %}
-
+<!-- 主页言行分页 -->
 <div class="chat-page">
     <ul class="pagination">
         <li>

@@ -52,7 +52,6 @@ class Information(models.Model):
     chats_num = models.CharField('Send.content', max_length=100, unique=True)
     read_chat = models.PositiveIntegerField(default=0)
 
-
     def __str__(self):
         return self.chats_num
 
