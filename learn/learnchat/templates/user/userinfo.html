@@ -37,8 +37,8 @@
                                     </li><hr/>
                                 {% endif %}
                             {% endfor %}
-                            <li>最后一次登录时间：{{ user.last_login|date:"Y-m-d H:i:s" }}</li>
-
+                            <!-- <li>最后一次登录时间：{{ user.last_login|date:"Y-m-d H:i:s" }}</li> -->
+                            <li>你的访问IP地址：{{ user_ip }} </li>
                         </ul>
                    </div>
                 </div>

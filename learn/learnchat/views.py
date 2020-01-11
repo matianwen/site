@@ -51,7 +51,12 @@ def user_info(request):
     context['headimge'] = Updateheadpoto.objects.all()
     context['introduceuser'] = Profile.objects.filter(user_id=request.session.get('user_id'))
     # context['usersex'] = User.objects.filter(sex=request.session.get('get_sex_display '))
-    # context['loginip'] = request.META['HTTP_X_FORWARDED_FOR']
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        user_ip = x_forwarded_for.split(',')[0]
+    else:
+        user_ip = request.META.get('REMOTE_ADDR')
+    context['user_ip'] = user_ip
     return render(request, 'user/userinfo.html', context)
 
 
@@ -128,3 +133,11 @@ def searchall(request):
     return render(request, 'user/searchall.html', context)
 
 
+# 获取访问者IP地址
+def get_user_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
