@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {# {% block css %}<link href="{% static 'css/search.css' %}" rel="stylesheet"/>{% endblock %} #}
-{% block title %}言行{% endblock %}
+{% block title %}言行 - 搜索{% endblock %}
 {% block content %}
     <div class="container">
         <div class="row">
@@ -13,14 +13,9 @@
                             <hr/>
                             {{ search }}
                         {% empty %}
+                            <h2>抱歉...</h2>
                             <h2>没有检索到符合条件信息...</h2>
                         {% endfor %}
-                        <!--
-                        {% for user in userall %}
-                            <hr/>
-                            {{ user }}
-                        {% endfor %}
-                        -->
                     </div>
                 </div>
             </div>

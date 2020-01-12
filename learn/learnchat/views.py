@@ -53,9 +53,9 @@ def user_info(request):
     # context['usersex'] = User.objects.filter(sex=request.session.get('get_sex_display '))
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
-        user_ip = x_forwarded_for.split(',')[0]
+        user_ip = x_forwarded_for.split(',')[0] # 真实IP
     else:
-        user_ip = request.META.get('REMOTE_ADDR')
+        user_ip = request.META.get('REMOTE_ADDR') # 代理IP
     context['user_ip'] = user_ip
     return render(request, 'user/userinfo.html', context)
 
