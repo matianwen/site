@@ -17,6 +17,7 @@ from comments.forms import CommentForm
 from likes.models import Likecount
 from django.core.paginator import Paginator
 
+learnchats_page_number = 10 # 每10条进行分页
 
 # 主页视图
 def index(request):
@@ -24,8 +25,8 @@ def index(request):
     # contexts['learnchats'] = Send.objects.all().order_by("-createTime")  # 显示所有发布内容视图
 
     chat_all_list = Send.objects.all().order_by("-createTime")
-    paginator = Paginator(chat_all_list, 10)
-    page_num = request.GET.get('page', 1)
+    paginator = Paginator(chat_all_list, learnchats_page_number)
+    page_num = request.GET.get('page', 1) # 获取url的页面参数（GET请求）
     page_of_chat = paginator.get_page(page_num)
     currentr_page_num = page_of_chat.number # 获取当前页码
     # 获取当前页码前后各2页的页码范围

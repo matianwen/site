@@ -5,7 +5,8 @@
 {% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
 
 
-
+<!-- 主页面滑到底部自动加载内容 -->
+<!--
 <script type="text/javascript">
     var index = 0;
     function lowEnough(){
@@ -40,20 +41,19 @@
     }
     checkScroll();
 </script>
-
-
+-->
 
 <!-- js点击显示/隐藏评论框-->
 <script type="text/javascript">
     $(document).ready(function(){
         $(".reply_btn").click(function(){
-            $(".form-group").toggle(500);
-            $(".form-comment").toggle(500);
+            $(".form-group").toggle();
+            $(".form-comment").toggle();
             $(".login-comment").toggle();
         });
     });
 </script>
-
+<!-- 点赞操作 -->
 <script type="text/javascript">
     function likechange(obj, content_type, object_id){
         var is_like = obj.getElementsByClassName('active').length == 0
@@ -87,8 +87,6 @@
         });
     }
 </script>
-
-
 <!--{% if head.username != chat.Temp %}
     {% if head.avatar != chat.headphoto %}
         <h4><a href="/user_home/"><img width="48" height="48" class="js-img-show" id="avatarShow" src="{% static 'headimages/default.png' %}"/>&nbsp;&nbsp;{{ chat.Temp }}</a></h4>
@@ -149,6 +147,7 @@
                 <span aria-hidden="true">&laquo;</span>
             {% endif %}
         </li>
+        {# 全部页码 #}
         {% for page_num in page_range %}
             {% if page_num == learnchats.number %}
                 <li class="active"><span>{{ page_num }}</span></li>
@@ -160,6 +159,8 @@
                 {% endif %}
             {% endif %}
         {% endfor %}
+
+        {# 下一页 #}
         <li>
             {% if learnchats.has_next %}
                 <a href="?page={{ learnchats.next_page_number }}" aria-label="Next">
@@ -170,4 +171,9 @@
             {% endif %}
         </li>
     </ul>
+    <p>
+        共有{{ learnchats.paginator.count }}条,
+        当前第{{ learnchats.number }}页,
+        共{{ learnchats.paginator.num_pages }}页
+    </p>
 </div>

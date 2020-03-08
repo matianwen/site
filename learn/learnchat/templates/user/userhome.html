@@ -1,9 +1,15 @@
+<!-- 隐藏空div -->
 <script type="text/javascript">
-       var chatpage=document.getElementById("#fusmdiv");
-       if(chatpage.innerHTML=='')
-       {
+        var chatpage=document.getElementById("#fusmdiv");
+        var chatpage2=document.getElementById("paneldiv");
+        var chatpage3=document.getElementById("mycontentdiv");
+        printf(chatpage)
+        if(chatpage.innerHTML=='')
+        {
             chatpage.style.display='none';
-       }
+            chatpage2.style.display='none';
+            chatpage3.style.display='none';
+        }
 </script>
 
 <div style="background-color:#f4f5f5">

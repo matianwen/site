@@ -75,4 +75,5 @@ def show_comments(request):
     contexts['likescount'] = likescount
     # contexts['comments_count'] = Comments.objects.filter(content_type=learnchat_content_type).count()
     # contexts['comments'] = Comments.objects.all()
+    # contexts['coments_all'] = Comments.objects.filter()
     return render(request, 'login/newcomment.html', contexts)

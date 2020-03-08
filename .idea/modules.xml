@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../site1/.idea/site.iml" filepath="$PROJECT_DIR$/../site1/.idea/site.iml" />
+      <module fileurl="file://E:/pythoncode/.idea/pythoncode.iml" filepath="E:/pythoncode/.idea/pythoncode.iml" />
+      <module fileurl="file://E:/site1/.idea/site.iml" filepath="E:/site1/.idea/site.iml" />
     </modules>
   </component>
 </project>
