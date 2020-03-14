@@ -7,7 +7,11 @@
 windows10 + mysql8 + python3.6.6 + Django2.1.10 + bootstrap3.3.7
 
 ## 部署环境
+<<<<<<< HEAD
 uwsgi-2.0.18 + mysql-8.0.19 + nginx1.16.1 + python3.7.5 + Django2.1.10 + bootstrap3.3.7
+=======
+nginx1.16.1 + python3.7.5 + Django2.1.10 + bootstrap3.3.7
+>>>>>>> 013a705a9d1903accfda89842714d61b8340e78b
 
 ## 功能
 目前主要有三大板块，主页、发现、黑洞，现在完成了登录及注册、发布、评论、用户信息、热点推荐等功能。
