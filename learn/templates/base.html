@@ -26,6 +26,18 @@
         <link href="{% static 'css/base.css' %}" rel="stylesheet"/>
         <!-- <link rel="SHORTCUT ICON" href="{% static 'images/favicon.ico' %}"/> -->
         {% block css %}<link href="{% static 'css/learchat.css' %}" rel="stylesheet"/>{% endblock %}
+
+        <!-- 百度统计脚本 -->
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?92fccacaec970ae81535cf24c90cedd1";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+
     </head>
     <body>
         <nav class="navbar navbar-default" role="navigation">
