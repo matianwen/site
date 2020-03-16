@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/learn/learnchat/templates/user/searchall.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="33" />
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -682,7 +682,7 @@
     <entry file="file://$PROJECT_DIR$/learn/learnchat/templates/user/searchall.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="33" />
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
         </state>
       </provider>
     </entry>
