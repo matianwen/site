@@ -2,9 +2,20 @@
 {% load staticfiles %}
 
 {% block title %}
-    言行|错误
+    言行 | 错误
 {% endblock %}
 
 {% block content %}
-    {{ message }}, <a href="{{ redirect_to }}">返回</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-10">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {{ message }}, <a href="{{ redirect_to }}">返回</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
