@@ -13,7 +13,7 @@ class Findnearhistory(models.Model):
     history = models.TextField('历史', null=True)
     timenow = models.DateTimeField(auto_now_add=True)
     see = models.IntegerField('浏览数', default=0)
-    photo = models.FileField('图片', upload_to="headimages/%Y/%m/%d/", default=u"headimages/history.png", max_length=100)
+    photo = models.FileField('图片', upload_to="headimages/%Y/%m/%d/", default=u"headimages/history.jpg", max_length=100)
 
 
     def __str__(self):
