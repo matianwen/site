@@ -13,13 +13,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learn/learnchat/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
               <caret line="128" column="93" lean-forward="true" selection-start-line="128" selection-start-column="93" selection-end-line="128" selection-end-column="93" />
               <folding>
                 <element signature="e#0#93#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/learn/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#span#0;n#form#0;n#div#0;n#ul#1;n#div#1;n#nav#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,7 +166,6 @@
         <option value="$PROJECT_DIR$/learn/static/css/about.css" />
         <option value="$PROJECT_DIR$/learn/login/templates/login/about.html" />
         <option value="$PROJECT_DIR$/learn/learnchat/templates/user/userhome.html" />
-        <option value="$PROJECT_DIR$/learn/templates/base.html" />
         <option value="$PROJECT_DIR$/learn/learnchat/templates/user/blackhole.html" />
         <option value="$PROJECT_DIR$/learn/findhistory/templates/find/find.html" />
         <option value="$PROJECT_DIR$/learn/login/templates/login/login.html" />
@@ -163,10 +174,11 @@
         <option value="$PROJECT_DIR$/learn/templates/error.html" />
         <option value="$PROJECT_DIR$/learn/findhistory/models.py" />
         <option value="$PROJECT_DIR$/learn/learnchat/views.py" />
+        <option value="$PROJECT_DIR$/learn/templates/base.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="744" />
     <option name="y" value="33" />
     <option name="width" value="1056" />
@@ -224,6 +236,12 @@
               <item name="learn" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="site" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\site" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="learn" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -271,10 +289,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49882352" visible="true" weight="0.2065131" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49882352" visible="true" weight="0.13423352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5011765" side_tool="true" weight="0.18347895" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -502,16 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#span#0;n#form#0;n#div#0;n#ul#1;n#div#1;n#nav#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/learn/login/templates/login/resetpassword.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-430">
@@ -714,6 +722,16 @@
           <caret line="128" column="93" lean-forward="true" selection-start-line="128" selection-start-column="93" selection-end-line="128" selection-end-column="93" />
           <folding>
             <element signature="e#0#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#span#0;n#form#0;n#div#0;n#ul#1;n#div#1;n#nav#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
