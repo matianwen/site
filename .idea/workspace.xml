@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/learn/learnchat/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+            <state relative-caret-position="254">
+              <caret line="128" column="93" lean-forward="true" selection-start-line="128" selection-start-column="93" selection-end-line="128" selection-end-column="93" />
               <folding>
                 <element signature="e#0#93#0" expanded="true" />
               </folding>
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learn/learnchat/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="-152">
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="14" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -38,10 +38,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn/findhistory/models.py">
+        <entry file="file://$PROJECT_DIR$/learn/login/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+            <state relative-caret-position="140">
+              <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/learn/learnchat/templates/user/searchall.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -121,7 +133,6 @@
         <option value="$PROJECT_DIR$/learn/learnchat/admin.py" />
         <option value="$PROJECT_DIR$/learn/likes/admin.py" />
         <option value="$PROJECT_DIR$/learn/findhistory/templates/find/findsecondpage.html" />
-        <option value="$PROJECT_DIR$/learn/learnchat/views.py" />
         <option value="$PROJECT_DIR$/learn/login/models.py" />
         <option value="$PROJECT_DIR$/learn/login/templates/login/resetpassword.html" />
         <option value="$PROJECT_DIR$/learn/static/css/learchat.css" />
@@ -151,10 +162,11 @@
         <option value="$PROJECT_DIR$/learn/findhistory/templates/find/findnearhistory.html" />
         <option value="$PROJECT_DIR$/learn/templates/error.html" />
         <option value="$PROJECT_DIR$/learn/findhistory/models.py" />
+        <option value="$PROJECT_DIR$/learn/learnchat/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="744" />
     <option name="y" value="33" />
     <option name="width" value="1056" />
@@ -166,6 +178,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -194,13 +207,27 @@
               <item name="site" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="E:\site" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="learn" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="learnchat" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="site" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\site" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="learn" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="learnchat" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="user" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="site" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\site" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="learn" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,9 +271,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49882352" visible="true" weight="0.19301033" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49882352" visible="true" weight="0.2065131" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5011765" side_tool="true" weight="0.18347895" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -257,7 +285,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32978722" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.25886524" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.25886524" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50039715" side_tool="true" weight="0.2996454" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32978722" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -619,13 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learn/learnchat/templates/user/searchall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/learn/login/templates/login/showcontent.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -653,10 +674,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/learn/findhistory/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/learnchat/templates/user/searchall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/learn/login/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
+        <state relative-caret-position="140">
           <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/learn/learnchat/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="14" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -665,28 +710,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/learn/learnchat/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+        <state relative-caret-position="254">
+          <caret line="128" column="93" lean-forward="true" selection-start-line="128" selection-start-column="93" selection-end-line="128" selection-end-column="93" />
           <folding>
             <element signature="e#0#93#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/learnchat/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/learn/findhistory/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
         </state>
       </provider>
     </entry>
